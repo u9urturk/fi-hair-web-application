@@ -22,7 +22,7 @@ function App() {
   
   if(isLoading === true) {
     return (
-    <div> 
+    <div className='min-w-[300px] h-screen overflow-hidden'> 
         
         <Home></Home>
        
