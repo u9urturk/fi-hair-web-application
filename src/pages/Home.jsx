@@ -21,7 +21,7 @@ export default function Home() {
       <button onClick={() => { setActive(true) }} className='flex  items-center justify-center transition-all  hover:scale-105  text-white  rounded-lg w-48 h-10 bg-[#507BB7]'>Developer Area</button>
       <Models isActive={isActive} onClose={handleDeActive}></Models>
       <div className='absolute transition-all cursor-pointer flex flex-row gap-x-4 justify-center bottom-3 right-1/3  md:flex-col text-2xl md:top-1/3 md:right-2 md:gap-y-4'>
-        <a href="https://www.instagram.com/ugrrturk/" target={'_blank'}><BsInstagram className='hover:scale-105'></BsInstagram></a>
+        <a href="https://www.instagram.com/fi.hairkaradeniz/?igshid=YmMyMTA2M2Y%3D" target={'_blank'}><BsInstagram className='hover:scale-105'></BsInstagram></a>
         <a href=""><FiTwitter className='hover:scale-105'></FiTwitter></a>
         <a href=""><AiOutlineFacebook className='hover:scale-105'></AiOutlineFacebook></a>
       </div>
