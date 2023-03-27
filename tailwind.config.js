@@ -8,8 +8,13 @@ module.exports = {
       animation: {
         'spin-slow': 'spin 6s linear infinite',
         'ping-slow': 'ping 2s linear infinite'
+      },
+      colors:{
+        'brand-color':'#507BB7',
+        'brand-color-white':'	#ffffff'
       }
-    }
+    },
+    
   },
   plugins: [],
 }

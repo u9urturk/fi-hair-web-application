@@ -1,9 +1,10 @@
 
 import { createSlice } from "@reduxjs/toolkit"
+import { Navigate } from "react-router-dom";
 
 
 const initialState = {
-    user: null
+    user:JSON.parse(localStorage.getItem('user'))
 }
 
 const auth = createSlice({
@@ -11,12 +12,22 @@ const auth = createSlice({
     initialState,
     reducers:{
         setUser : (state,action) =>{
-          
-            state.user  = action.payload
+            const user = action.payload
+            localStorage.setItem('user', JSON.stringify(user));
+            state.user  = user
+        },
+        logout:(state)=>{
+            //console.log("ok")
+            state.user=null;
+            localStorage.removeItem('user');
+            //return <Navigate to={'/'} replace={true} />
         }
-    }
-})
+    }})
+
+
 
 
 export const {setUser}  = auth.actions
+export const {logout}  = auth.actions
+
 export default auth.reducer
