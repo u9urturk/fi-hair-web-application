@@ -1,21 +1,17 @@
 import React from 'react'
-import Icon from '../../../components/Icon'
 
 export default function Navbar() {
-  const logo = process.env.PUBLIC_URL + `fihair-logo-new.PNG`
-
-  return (
-    <div className='container py-10 px-20 min-w-[300px]'>
-        <div className='flex items-center justify-between'>
-          <div className='flex items-center justify-center gap-x-3'>
-            <Icon name={'fihair-logo-new'} title={'logo'} width={90}></Icon>
-            <div>
-            <strong className='text-2xl font-medium font-serif tracking-widest'>Fi</strong>
-            <strong className='text-2xl font-medium text-brand-color font-serif tracking-widest'>Hair</strong>
-
+    return (
+        <div className=' w-full h-16 bg-brand-color flex items-center justify-center  '>
+            <div className='container mx-auto px-28 py-1 flex items-center justify-center gap-x-16 text-white font-semibold '>
+                <div>AnaSayfa</div>
+                <div>Fi Hair</div>
+                <div>Saç Ekimi</div>
+                <div>Teknikler</div>
+                <div>Hizmetlerimiz</div>
+                <div>SSS</div>
+                <div>İletişim</div>
             </div>
-          </div>
         </div>
-    </div>
-  )
+    )
 }
