@@ -1,21 +1,21 @@
 import React from 'react'
 import Button from '../../../components/Button'
 import store from '../../../store'
-import {logout} from '../../../store/auth'
+import { logout } from '../../../store/auth'
 import Header from '../components/Header'
 import Navbar from '../components/Navbar'
-import Slider from '../components/Slider'
+import SliderCmp from '../components/SliderCmp'
 
 
 
 
 export default function Layout() {
-  const logoutLy = ()=>store.dispatch(logout())
+  const logoutLy = () => store.dispatch(logout())
   return (
     <div>
       <Header></Header>
       <Navbar></Navbar>
-      <Slider></Slider>
+      <SliderCmp></SliderCmp>
       <div className='my-10'><Button onClick={logoutLy}>Logout</Button></div>
     </div>
   )
