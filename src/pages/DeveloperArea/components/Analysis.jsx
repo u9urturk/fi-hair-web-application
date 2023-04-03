@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, {useState } from 'react'
 
 export default function Analysis() {
     const imagesUrl = process.env.PUBLIC_URL + `/SDTG/`
@@ -18,11 +18,6 @@ export default function Analysis() {
         }
     }
 
-    useEffect(() => {
-        console.log(isOpen);
-    }, [isOpen])
-
-
 
     return (
         <div className='w-full h-screen bg-gray-100 flex flex-col pt-1 pl-8 justify-start gap-y-10 '>
@@ -33,13 +28,13 @@ export default function Analysis() {
                     <div className='border-t-[1px] border-brand-color w-full'></div>
                 </div>
                 <div className='flex items-center pt-4 transition-all justify-center gap-x-24'>
-                    <div onClick={() => { setisOpen(true) }} className='relative'>
+                    <div onClick={() => { setisOpen(true) }} className='flex flex-col items-center justify-center'>
                         <img className='h-auto w-96 bg-white rounded-xl transition-all cursor-pointer hover:border active:scale-95 ' src={`${imagesUrl}erkekderece1.png`} alt="" />
-                        <p className='absolute bottom-[10%] left-[45%] font-medium'>Erkek</p>
+                        <p className=' text-xs md:text-base font-medium md:-translate-y-10 -translate-y-5'>Erkek</p>
                     </div>
-                    <div onClick={() => { setisOpen(true) }} className='relative' >
+                    <div onClick={() => { setisOpen(true) }} className='flex flex-col items-center justify-center' >
                         <img className='h-auto w-96 bg-white rounded-xl cursor-pointer hover:border active:scale-95 ' src={`${imagesUrl}kadinderece1.png`} alt="" />
-                        <p className='absolute bottom-[10%] left-[45%] font-medium'>Kadın</p>
+                        <p className=' text-xs md:text-base font-medium md:-translate-y-10 -translate-y-5'>Kadın</p>
 
                     </div>
                 </div>
