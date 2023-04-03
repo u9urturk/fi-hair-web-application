@@ -21,7 +21,7 @@ export default function SliderCmp() {
         <div>
             <Slider {...settings}>
                 <img src={slide1} className="max-h-[500px] h-full w-full" alt="" />
-                <img src={slide2} className="max-h-[500px] h-full w-full " alt="" />
+                <img src={slide2} className="max-h-[500px] h-full  w-full " alt="" />
             </Slider>
         </div>
     )
