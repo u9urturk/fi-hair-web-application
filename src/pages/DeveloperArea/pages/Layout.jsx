@@ -28,8 +28,8 @@ export default function Layout() {
       <div className='fixed -left-8 bottom-2 h-auto w-auto'>
         <img className='w-40 h-auto transition-all active:scale-95 cursor-pointer hover:scale-105' src={whatsapp} alt="" />
       </div>
-      <div className='fixed -z-10  flex justify-center items-end  md:justify-end md:pr-2 md:items-center h-screen w-full left-0 top-0'>
-        <div className='transition-all  flex md:flex-col md:justify-center md:items-center gap-x-3 text-xl md:text-2xl pb-3 md:gap-y-3 '>
+      <div className='fixed  flex justify-center items-end  md:justify-end md:pr-2 md:items-center md:h-screen md:w-[30px] w-screen h-[50px] md:right-0 md:top-0 bottom-0'>
+        <div className='transition-all  flex md:flex-col md:justify-center md:items-center gap-x-3 text-2xl md:text-2xl pb-3 md:gap-y-3 '>
           <a href="https://www.instagram.com/fi.hairkaradeniz/?igshid=YmMyMTA2M2Y%3D" target={'_blank'}><BsInstagram className='hover:scale-105'></BsInstagram></a>
           <a href=""><FiTwitter className='hover:scale-105'></FiTwitter></a>
           <a href=""><AiOutlineFacebook className='hover:scale-105'></AiOutlineFacebook></a>
