@@ -1,20 +1,17 @@
 import { GoTools } from 'react-icons/go'
 import { AiOutlineCloseCircle } from 'react-icons/ai'
 import { useSelector } from 'react-redux'
-import { Navigate, useLocation } from 'react-router-dom'
+import { Navigate  } from 'react-router-dom'
 import { Form, Formik } from 'formik'
 import { LoginSchema } from '../Validation/login-schema'
 import Input from './Input'
 import Button from './Button'
-import { useState } from 'react'
 import { ToastContainer, toast } from 'react-toastify';
 import { userHendle } from '../utils'
 
 
 export default function Models({ isActive = false, onClose }) {
-    const [authantication, setAuthantication] = useState(false);
     const user = useSelector(state => state.auth.user)
-    const location = useLocation()
     //console.log(user);
 
     const checkAuth = ( username, password ) => {
