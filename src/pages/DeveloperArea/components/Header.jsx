@@ -4,7 +4,6 @@ import Button from '../../../components/Button'
 import Icon from '../../../components/Icon'
 
 export default function Header() {
-  const logo = process.env.PUBLIC_URL + `fihair-logo-new.PNG`
 
   return (
     <div className='w-full h-auto flex items-center justify-center py-6'>

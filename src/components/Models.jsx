@@ -74,7 +74,7 @@ export default function Models({ isActive = false, onClose }) {
 
     }
 
-    if (isActive == true) {
+    if (isActive === true) {
         return (
             <div className='fixed top-0 left-0 h-screen w-full  backdrop-blur-sm'>
                 <div className='h-full w-full flex items-center justify-center'>

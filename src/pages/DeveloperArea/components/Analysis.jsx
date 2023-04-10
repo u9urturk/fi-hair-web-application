@@ -56,7 +56,7 @@ export default function Analysis() {
     const ref = useRef()
     const [isOpen, setisOpen] = useState(false)
     const [gender, setGender] = useState()
-    const [data,setData] = useState()
+   // const [data,setData] = useState()
     const [selected, setSelected] = useState('TR');
 
     const notifyError = () => toast.error('Hata! , Gönderilemedi', {
@@ -204,10 +204,10 @@ export default function Analysis() {
     ]
 
     const xyImages = [
-        { id: 1, src: imagesUrl + "erkekderece1.png" }, { id: 2, src: imagesUrl + "erkekderece2.png" }, { id: 3, src: imagesUrl + "erkekderece3.png" }, { id: 4, src: imagesUrl + "erkekderece4.png" }
+        { id: 1, src: imagesUrl + "man1.svg" }, { id: 2, src: imagesUrl + "man2.svg"}, { id: 3, src: imagesUrl + "man3.svg" }, { id: 4, src: imagesUrl + "man4.svg"}
     ]
     const xxImages = [
-        { id: 1, src: imagesUrl + "kadinderece1.png" }, { id: 2, src: imagesUrl + "kadinderece2.png" }, { id: 3, src: imagesUrl + "kadinderece3.png" }, { id: 4, src: imagesUrl + "kadinderece4.png" }
+        { id: 1, src: imagesUrl + "women1.svg"  }, { id: 2, src: imagesUrl + "women2.svg" }, { id: 3, src: imagesUrl + "women3.svg" }, { id: 4, src: imagesUrl + "women4.svg" }
     ]
 
     const phones = {
@@ -266,7 +266,7 @@ export default function Analysis() {
                                 <div className='grid grid-cols-2 grid-flow-row gap-4 pt-3'>
                                     {
                                         xxImages.map(image => {
-                                            return <img key={image.id} onClick={() => { dispatch({ type: "SET_XX", value: image.id }); deneme(5) }} src={image.src} className='border-[1px] h-auto w-48 hover:border-white cursor-pointer active:scale-95 ' alt="" />
+                                            return <img key={image.id} onClick={() => { dispatch({ type: "SET_XX", value: image.id }); deneme(5) }} src={image.src} className='border-[1px] h-auto  w-48 hover:border-white cursor-pointer active:scale-95 ' alt="" />
                                         })
                                     }
 
@@ -317,13 +317,13 @@ export default function Analysis() {
                     <div className='border-t-[1px] border-brand-color w-full'></div>
                 </div>
                 <div className='flex items-center pt-4 transition-all justify-center gap-x-24'>
-                    <div onClick={() => { setGender(1); setisOpen(true); }} className='flex flex-col items-center justify-center'>
-                        <img className='h-auto w-96 bg-white rounded-xl transition-all cursor-pointer hover:border active:scale-90 ' src={`${imagesUrl}erkekderece1.png`} alt="" />
-                        <p className=' text-xs md:text-base font-medium md:-translate-y-10 -translate-y-5'>Erkek</p>
+                    <div onClick={() => { setGender(1); setisOpen(true); }} className='relative flex flex-col items-center justify-center'>
+                        <img className='h-auto w-96 bg-white rounded-xl transition-all cursor-pointer hover:border active:scale-90 ' src={`${imagesUrl}man1.svg`} alt="" />
+                        <p className=' absolute text-xs md:text-base font-semibold right-4 top-4'>Erkek</p>
                     </div>
-                    <div onClick={() => { setGender(0); setisOpen(true); }} className='flex flex-col items-center justify-center' >
-                        <img className='h-auto w-96 bg-white rounded-xl cursor-pointer hover:border active:scale-90 ' src={`${imagesUrl}kadinderece1.png`} alt="" />
-                        <p className=' text-xs md:text-base font-medium md:-translate-y-10 -translate-y-5'>Kadın</p>
+                    <div onClick={() => { setGender(0); setisOpen(true); }} className='flex flex-col relative items-center justify-center' >
+                        <img className='h-auto w-96 bg-white rounded-xl cursor-pointer hover:border active:scale-90 ' src={`${imagesUrl}women1.svg`} alt="" />
+                        <p className='absolute text-xs md:text-base font-semibold  right-4 top-4'>Kadın</p>
 
                     </div>
                 </div>

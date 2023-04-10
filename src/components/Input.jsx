@@ -6,7 +6,7 @@ import classNames from 'classnames';
 
 export default function Input({ label,type = "text", ...props }) {
 
-    const[field,meta,helpers] =useField(props)
+    const[field] =useField(props)
     const [show,setShow] = useState(false);
     const[ inputType , setType]  = useState(type)
 
