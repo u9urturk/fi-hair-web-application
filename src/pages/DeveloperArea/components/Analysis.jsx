@@ -317,11 +317,11 @@ export default function Analysis() {
                     <div className='border-t-[1px] border-brand-color w-full'></div>
                 </div>
                 <div className='flex items-center pt-4 transition-all justify-center gap-x-24'>
-                    <div onClick={() => { setGender(1); setisOpen(true); }} className='relative flex flex-col items-center justify-center'>
+                    <div onClick={() => { setGender(1); setisOpen(true); }} className='relative  shadow-2xl flex flex-col items-center justify-center'>
                         <img className='h-auto w-96 bg-white rounded-xl transition-all cursor-pointer hover:border active:scale-90 ' src={`${imagesUrl}man1.svg`} alt="" />
                         <p className=' absolute text-xs md:text-base font-semibold right-4 top-4'>Erkek</p>
                     </div>
-                    <div onClick={() => { setGender(0); setisOpen(true); }} className='flex flex-col relative items-center justify-center' >
+                    <div onClick={() => { setGender(0); setisOpen(true); }} className='flex flex-col shadow-2xl relative items-center justify-center' >
                         <img className='h-auto w-96 bg-white rounded-xl cursor-pointer hover:border active:scale-90 ' src={`${imagesUrl}women1.svg`} alt="" />
                         <p className='absolute text-xs md:text-base font-semibold  right-4 top-4'>Kadın</p>
 

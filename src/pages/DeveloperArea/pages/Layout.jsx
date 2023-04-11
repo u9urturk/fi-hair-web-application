@@ -10,6 +10,8 @@ import Communication from '../components/Communication'
 import Header from '../components/Header'
 import Navbar from '../components/Navbar'
 import SliderCmp from '../components/SliderCmp'
+import Welcome from '../components/Welcome'
+import FemaleType from '../components/FemaleType'
 
 
 
@@ -24,6 +26,8 @@ export default function Layout() {
       <SliderCmp></SliderCmp>
       <Communication></Communication>
       <Analysis></Analysis>
+      <Welcome></Welcome>
+      <FemaleType></FemaleType>
       <div className='my-10'><Button onClick={logoutLy}>Logout</Button></div>
       <div className='fixed -left-8 bottom-2 h-auto w-auto'>
         <img className='w-40 h-auto transition-all active:scale-95 cursor-pointer hover:scale-105' src={whatsapp} alt="" />
