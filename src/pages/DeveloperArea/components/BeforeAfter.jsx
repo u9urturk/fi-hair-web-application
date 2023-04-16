@@ -5,7 +5,6 @@ export default function BeforeAfter() {
 
     useEffect(() => {
       let items =ref.current.querySelectorAll('#itm')
-      console.log(items[0])
         
       const itemsSlider = ()=>{
         items.forEach(e => {
