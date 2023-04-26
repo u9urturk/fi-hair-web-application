@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import Icon from '../../../components/Icon'
+import { addFormContact } from '../../../firebase'
 
 export default function WhyFihair() {
 
@@ -9,11 +10,13 @@ export default function WhyFihair() {
         fullName:"",
         phoneNumber:""
     })
-
+    const addFormContact_ = (formData)=>{
+        addFormContact(formData)
+    }
 
     const handleSubmit = (e)=>{
         e.preventDefault()
-        console.log(formData)
+        addFormContact_(formData);
     }
 
 
