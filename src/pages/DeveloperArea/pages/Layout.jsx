@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { AiOutlineFacebook } from 'react-icons/ai'
 import { BsInstagram } from 'react-icons/bs'
 import { FiTwitter } from 'react-icons/fi'
 import{RiLogoutCircleRLine} from 'react-icons/ri'
-import Button from '../../../components/Button'
+import{MdForwardToInbox}from 'react-icons/md'
 import store from '../../../store'
 import { logout } from '../../../store/auth'
 import Analysis from '../components/Analysis'
@@ -18,12 +18,14 @@ import WhyFihair from '../components/WhyFihair'
 import Contact from '../components/Contact'
 import Footer from '../components/Footer'
 import FooterDeveloper from '../components/FooterDeveloper'
+import Inbox from '../components/inbox.jsx'
 
 
 
 
 export default function Layout() {
   const logoutLy = () => store.dispatch(logout())
+  const [isOpen, setIsOpen] = useState(false)
   const whatsapp = process.env.PUBLIC_URL + `/whatsapp.png`
   return (
     <div className='relative'>
@@ -47,9 +49,11 @@ export default function Layout() {
           <a href="https://www.instagram.com/fihairclinic/" target={'_blank'}><BsInstagram className='text-gray-800  hover:scale-105'></BsInstagram></a>
           <a href=""><FiTwitter className='hover:scale-105 text-gray-800 '></FiTwitter></a>
           <a href=""><AiOutlineFacebook className='hover:scale-105 text-gray-800 '></AiOutlineFacebook></a>
+          <button onClick={()=>{setIsOpen(true)}}><MdForwardToInbox></MdForwardToInbox></button>
           <button onClick={logoutLy}><RiLogoutCircleRLine></RiLogoutCircleRLine></button>
         </div>
       </div>
+      <Inbox isOpen={isOpen} onClose={()=>{setIsOpen(false)}}></Inbox>
     </div>
   )
 }

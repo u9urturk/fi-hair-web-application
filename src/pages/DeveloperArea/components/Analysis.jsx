@@ -2,6 +2,7 @@ import React, { useRef, useState } from 'react'
 import ReactFlagsSelect from 'react-flags-select'
 import { ToastContainer, toast } from 'react-toastify'
 import { addFormAnalysis } from '../../../firebase'
+import MultipleFileUpload from '../../../components/MultipleFileUpload'
 
 export default function Analysis() {
     const imagesUrl = process.env.PUBLIC_URL + `/SDTG/`
@@ -15,7 +16,6 @@ export default function Analysis() {
         hairLossType:null,
         fullName:"",
         phoneNumber:""
-
 
     })
     const [selected, setSelected] = useState('TR');
@@ -41,16 +41,13 @@ export default function Analysis() {
         theme: "colored",
     });
 
-    const formDataAnalysis = (data)=>{
-        addFormAnalysis(data)
-    }
+   
 
     const handleSubmit = ()=>{
         if(true){
             //console.log(formData);
             notifySuccess()
             setTimeout(() => {
-                formDataAnalysis(formData);
                 setisOpen(false);
                 setFormData({gender:null,age:null,isThereAFamilyHistoryOfHairLoss:null,howManyYearsHairLoss:null,hairLossType:null, fullName:"",phoneNumber:""})
 
@@ -242,7 +239,7 @@ export default function Analysis() {
                                 <div className='flex flex-col items-center justify-center gap-y-3'>
                                     <strong>Saç Analizi İçin Kendi Fotoğraflarınızı Yüklemek İster misiniz ?</strong>
                                     <div >
-                                        <input type="file" name="test" id="" />
+                                        <MultipleFileUpload formData={formData} onClose={handleSubmit} ></MultipleFileUpload>
                                     </div>
                                 </div>
                                 <div  className='translate-x-40 translate-y-4 active:scale-95 hover:scale-105 transition-all'><button onClick={()=>{handleSubmit()}} className='h-10 font-medium tracking-widest text-gray-900 w-auto bg-brand-color rounded-md px-8'>Gönder</button></div>
