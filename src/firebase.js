@@ -1,6 +1,7 @@
 import { initializeApp } from "firebase/app";
 import { addDoc, collection, doc, getFirestore, setDoc } from "firebase/firestore";
 import { getDownloadURL, getStorage,ref as storageRef, uploadBytesResumable } from "firebase/storage";
+import { getProgress } from "./components/MultipleFileUpload";
 
 
 const firebaseConfig = {
@@ -29,20 +30,23 @@ export const addFormData = (customerId, file) => {
     const sRef = storageRef(storage, `${customerId}/${file.name}`);
     const uploadTask = uploadBytesResumable(sRef, file, metadata);
 
+
     // Listen for state changes, errors, and completion of the upload.
-    uploadTask.on('state_changed',
+     uploadTask.on('state_changed',
         (snapshot) => {
-            // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
-            const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-            console.log('Upload is ' + progress + '% done');
-            switch (snapshot.state) {
-                case 'paused':
-                    console.log('Upload is paused');
-                    break;
-                case 'running':
-                    console.log('Upload is running');
-                    break;
-            }
+            //Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
+          const  progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+            getProgress(progress);
+            
+            // console.log('Upload is ' + progress + '% done');
+            // switch (snapshot.state) {
+            //     case 'paused':
+            //         console.log('Upload is paused');
+            //         break;
+            //     case 'running':
+            //         console.log('Upload is running');
+            //         break;
+            // }
         },
         (error) => {
             // A full list of error codes is available at
@@ -69,6 +73,7 @@ export const addFormData = (customerId, file) => {
             });
         }
     );
+
 
 }
 
@@ -114,6 +119,6 @@ export const addFormAnalysis = async (props) => {
 
          addFormData(docRef.id,props.iFile)
 
-        console.log("Eklenen id : " + docRef.id);
+        //console.log("Eklenen id : " + docRef.id);
 
 }
