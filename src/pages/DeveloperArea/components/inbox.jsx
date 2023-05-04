@@ -1,6 +1,7 @@
 import React from 'react'
 import ListenContact from '../../../components/ListenContact'
 import {AiOutlineCloseCircle} from 'react-icons/ai'
+import ListenAnalysis from '../../../components/ListenAnalysis'
 
 export default function Inbox({ isOpen, onClose }) {
 
@@ -21,8 +22,11 @@ export default function Inbox({ isOpen, onClose }) {
                             </div>
 
                         </div>
-                        <div className='w-full h-full basis-[50%] flex items-start justify-center'>
+                        <div className='w-full gap-y-2 h-full basis-[50%] border-r border-gray-100 border-opacity-40 flex flex-col items-center justify-center'>
                             <header className='text-gray-100'>Analiz</header>
+                            <div  className=' justify-center overflow-auto  w-[calc(100%-2rem)]  basis-[95%]'>
+                                <ListenAnalysis></ListenAnalysis>
+                            </div>
                         </div>
                     </div>
                 </div>

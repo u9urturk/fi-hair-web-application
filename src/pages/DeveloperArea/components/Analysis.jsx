@@ -1,7 +1,6 @@
 import React, { useRef, useState } from 'react'
 import ReactFlagsSelect from 'react-flags-select'
 import { ToastContainer, toast } from 'react-toastify'
-import { addFormAnalysis } from '../../../firebase'
 import MultipleFileUpload from '../../../components/MultipleFileUpload'
 
 export default function Analysis() {
@@ -9,9 +8,9 @@ export default function Analysis() {
     const ref = useRef()
     const [isOpen, setisOpen] = useState(false)
     const [formData,setFormData] = useState({
-        gender:null,
+        gender:"",
         age:null,
-        isThereAFamilyHistoryOfHairLoss:null,
+        isThereAFamilyHistoryOfHairLoss:"",
         howManyYearsHairLoss:null,
         hairLossType:null,
         fullName:"",
@@ -43,15 +42,15 @@ export default function Analysis() {
 
    
 
-    const handleSubmit = ()=>{
-        if(true){
+    const handleSubmit = (res)=>{
+        if(res){
             //console.log(formData);
             notifySuccess()
             setTimeout(() => {
                 setisOpen(false);
                 setFormData({gender:null,age:null,isThereAFamilyHistoryOfHairLoss:null,howManyYearsHairLoss:null,hairLossType:null, fullName:"",phoneNumber:""})
 
-            },300);
+            },1300);
         }else{
             notifyError()
         }
@@ -192,8 +191,8 @@ export default function Analysis() {
                             <div id='zx' className='hidden flex items-center justify-center flex-col  bg-brand-color bg-opacity-30  rounded-xl  border-white border-2 px-4 py-6 gap-y-2'>
                                 <strong>Ailenizde saçı dökülen var mı ?</strong>
                                 <div className='flex items-center justify-center gap-x-6 '>
-                                    <button onClick={() => { setFormData({...formData,isThereAFamilyHistoryOfHairLoss:1}); deneme(3) }} className='bg-white h-auto w-24 rounded-md hover:bg-white transition-all active:scale-95'>Evet</button>
-                                    <button onClick={() => { setFormData({...formData,isThereAFamilyHistoryOfHairLoss:0}); deneme(3) }} className='bg-white h-auto w-24 rounded-md hover:bg-white transition-all active:scale-95'>Hayır</button>
+                                    <button onClick={() => { setFormData({...formData,isThereAFamilyHistoryOfHairLoss:"Evet"}); deneme(3) }} className='bg-white h-auto w-24 rounded-md hover:bg-white transition-all active:scale-95'>Evet</button>
+                                    <button onClick={() => { setFormData({...formData,isThereAFamilyHistoryOfHairLoss:"Hayır"}); deneme(3) }} className='bg-white h-auto w-24 rounded-md hover:bg-white transition-all active:scale-95'>Hayır</button>
                                 </div>
                             </div>
                             <ul id='zy' className='flex hidden flex-col bg-brand-color bg-opacity-30 p-8 rounded-xl  items-center justify-center px-4 py-6 border-white border-2 gap-y-2'>
@@ -239,10 +238,10 @@ export default function Analysis() {
                                 <div className='flex flex-col items-center justify-center gap-y-3'>
                                     <strong>Saç Analizi İçin Kendi Fotoğraflarınızı Yüklemek İster misiniz ?</strong>
                                     <div >
-                                        <MultipleFileUpload formData={formData} onClose={handleSubmit} ></MultipleFileUpload>
+                                        <MultipleFileUpload formData={formData} onClose={()=>{handleSubmit(true)}} ></MultipleFileUpload>
                                     </div>
                                 </div>
-                                <div  className='translate-x-40 translate-y-4 active:scale-95 hover:scale-105 transition-all'><button onClick={()=>{handleSubmit()}} className='h-10 font-medium tracking-widest text-gray-900 w-auto bg-brand-color rounded-md px-8'>Gönder</button></div>
+                                {/* <div  className='translate-x-40 translate-y-4 active:scale-95 hover:scale-105 transition-all'><button onClick={()=>{handleSubmit()}} className='h-10 font-medium tracking-widest text-gray-900 w-auto bg-brand-color rounded-md px-8'>Gönder</button></div> */}
                                
                                     
                             </div>
