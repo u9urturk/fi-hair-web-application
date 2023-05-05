@@ -16,7 +16,7 @@ export default function ListenContact() {
         const ref = collection(db,"contact")
         const q = query(ref,orderBy("createdTime","desc"));
         const unsub =onSnapshot(q,(querySnapshot) => {
-            console.log(querySnapshot.docs)
+            //console.log(querySnapshot.docs)
             const data = querySnapshot.docs.map(doc => ({
                 ... doc.data(),
                 id:doc.id,
