@@ -28,7 +28,7 @@ export default function Layout() {
   const [isOpen, setIsOpen] = useState(false)
   const whatsapp = process.env.PUBLIC_URL + `/whatsapp.png`
   return (
-    <div className='relative'>
+    <div className='relative '>
       <Header></Header>
       <Navbar></Navbar>
       <SliderCmp></SliderCmp>
