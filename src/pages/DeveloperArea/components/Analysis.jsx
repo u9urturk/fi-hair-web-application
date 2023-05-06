@@ -179,19 +179,19 @@ export default function Analysis() {
                     <div>
                         <div ref={ref} className='flex flex-col gap-y-4'>
                             <ul id='age' className='flex relative flex-col px-4 py-6 md:py-16 bg-brand-color bg-opacity-30 rounded-xl  border-white border-2 gap-y-2 md:gap-y-3  items-center justify-center h-auto max-w-4xl w-[200px] md:w-[400px]'>
-                            <div onClick={() => { setisOpen(false) }} className='absolute cursor-pointer text-2xl font-bold top-1 right-1'><AiOutlineCloseCircle size={32}></AiOutlineCloseCircle></div>
+                            <div onClick={() => { setisOpen(false) }} className='absolute cursor-pointer text-2xl text-gray-100 font-bold top-1 right-1'><AiOutlineCloseCircle size={32}></AiOutlineCloseCircle></div>
                                 <strong className='font-serif '>Yaş</strong>
                                 {
                                     ages.map(age => {
                                         return <li key={age.id} onClick={() => { setFormData({...formData,age:age.age}); deneme(2) }} 
-                                        className='hover:bg-white w-full border-[2px] py-1 h-auto flex items-center justify-center cursor-pointer 
+                                        className='hover:bg-white md:bg-transparent bg-gray-100  w-full border-[2px] py-1 h-auto flex items-center justify-center cursor-pointer 
                                         transition-all rounded-md active:scale-95'>{age.age}</li>
                                     })
                                 }
 
                             </ul>
                             <div id='zx' className='hidden flex relative items-center justify-center flex-col  bg-brand-color bg-opacity-30  rounded-xl  border-white border-2 px-4 py-6 gap-y-2'>
-                            <div onClick={() => { setisOpen(false) }} className='absolute cursor-pointer text-2xl font-bold top-1 right-1'><AiOutlineCloseCircle size={22}></AiOutlineCloseCircle></div>
+                            <div onClick={() => { setisOpen(false) }} className='absolute cursor-pointer text-2xl font-bold top-1 text-gray-100  right-1'><AiOutlineCloseCircle size={22}></AiOutlineCloseCircle></div>
                                 <strong>Ailenizde saçı dökülen var mı ?</strong>
                                 <div className='flex items-center justify-center gap-x-6 '>
                                     <button onClick={() => { setFormData({...formData,isThereAFamilyHistoryOfHairLoss:"Evet"}); deneme(3) }} className='bg-white h-auto w-24 rounded-md hover:bg-white transition-all active:scale-95'>Evet</button>
@@ -199,18 +199,18 @@ export default function Analysis() {
                                 </div>
                             </div>
                             <ul id='zy' className='flex hidden relative flex-col bg-brand-color bg-opacity-30 p-8 rounded-xl  items-center justify-center px-4 py-6 border-white border-2 gap-y-2'>
-                            <div onClick={() => { setisOpen(false) }} className='absolute cursor-pointer text-2xl font-bold top-1 right-1'><AiOutlineCloseCircle size={24}></AiOutlineCloseCircle></div>
+                            <div onClick={() => { setisOpen(false) }} className='absolute cursor-pointer text-2xl font-bold top-1 text-gray-100  right-1'><AiOutlineCloseCircle size={24}></AiOutlineCloseCircle></div>
                                 <strong className='font-serif pb-4'>Kaç Yıldır Saçınız Dökülüyor ? </strong>
                                 {howManyYearsHairLoss.map(res => {
                                     return <li key={res.id} onClick={() => { setFormData({...formData,howManyYearsHairLoss:res.zy}); deneme(4) }}
-                                     className='hover:bg-white  border-[2px] w-full h-auto flex items-center justify-center cursor-pointer 
+                                     className='hover:bg-white bg-gray-100 md:bg-transparent border-[2px] w-full h-auto flex items-center justify-center cursor-pointer 
                                      transition-all rounded-md active:scale-95'>{res.zy}</li>
                                 })}
 
                             </ul>
                             <ul id='type' className=' hidden flex-col relative  bg-brand-color bg-opacity-30  rounded-xl   items-center justify-center 
                              px-4 py-6  border-white border-2 '>
-                                 <div onClick={() => { setisOpen(false) }} className='absolute cursor-pointer text-2xl font-bold top-1 right-1'><AiOutlineCloseCircle size={32}></AiOutlineCloseCircle></div>
+                                 <div onClick={() => { setisOpen(false) }} className='absolute cursor-pointer text-2xl font-bold top-1 text-gray-100  right-1'><AiOutlineCloseCircle size={32}></AiOutlineCloseCircle></div>
                                 <div className='w-full h-auto flex items-center justify-center'><strong>Saçınızın Dökülme Tipini Seçin</strong></div>
                                 <div className='grid grid-cols-2 grid-flow-row gap-4 pt-3'>
                                     {
@@ -229,7 +229,7 @@ export default function Analysis() {
                             </ul>
                            
                             <div id='name'className=' hidden relative flex flex-col items-center justify-center gap-y-8 bg-brand-color bg-opacity-30 p-8 rounded-xl '>
-                            <div onClick={() => { setisOpen(false) }} className='absolute cursor-pointer text-2xl font-bold top-1 right-1'><AiOutlineCloseCircle size={32}></AiOutlineCloseCircle></div>
+                            <div onClick={() => { setisOpen(false) }} className='absolute cursor-pointer text-2xl font-bold top-1 text-gray-100  right-1'><AiOutlineCloseCircle size={32}></AiOutlineCloseCircle></div>
                                 <strong>Saç Analizi İçin Formu Doldurun</strong>
                                 <div className='flex  flex-col items-center  justify-center w-full h-auto   gap-y-4'>
                                     <input className='w-full rounded-md h-[44px] px-2 outline-none focus:placeholder:text-xs focus:placeholder:-translate-y-2' onChange={(e)=>{setFormData({...formData,fullName:e.target.value})}} value={formData.fullName} type="text" placeholder='   Adınız Soyadınız' />

@@ -1,20 +1,23 @@
 import React, { useState } from 'react'
 import Icon from '../../../components/Icon'
 import { addFormContact } from '../../../firebase'
+import { AiOutlineCloseCircle } from 'react-icons/ai'
+
 
 export default function WhyFihair() {
 
     const whyFihair = process.env.PUBLIC_URL + `/whyFihair.png`
+
     const [isActive, setisActive] = useState(false)
     const [formData, setFormData] = useState({
-        fullName:"",
-        phoneNumber:""
+        fullName: "",
+        phoneNumber: ""
     })
-    const addFormContact_ = (formData)=>{
+    const addFormContact_ = (formData) => {
         addFormContact(formData)
     }
 
-    const handleSubmit = (e)=>{
+    const handleSubmit = (e) => {
         e.preventDefault()
         addFormContact_(formData);
     }
@@ -27,15 +30,17 @@ export default function WhyFihair() {
                     <form onSubmit={handleSubmit} id='name' className=' relative flex flex-col items-center justify-center gap-y-8 bg-brand-color bg-opacity-30 p-8 rounded-xl '>
                         <strong className='text-white'>Formu Doldurun Sizi Arayalım</strong>
                         <div className='flex  flex-col items-center  justify-center w-full h-auto   gap-y-4'>
-                            <input onChange={(e)=>{setFormData({...formData , fullName:e.target.value})}} value={formData.fullName} className='w-full rounded-md h-[44px] px-2 outline-none focus:placeholder:text-xs focus:placeholder:-translate-y-2' type="text" placeholder='   Adınız Soyadınız' />
+                            <input onChange={(e) => { setFormData({ ...formData, fullName: e.target.value }) }} value={formData.fullName} className='w-full rounded-md h-[44px] px-2 outline-none focus:placeholder:text-xs focus:placeholder:-translate-y-2' type="text" placeholder='   Adınız Soyadınız' />
                             <div className='flex items-center justify-center gap-x-2 '>
-                                <input onChange={(e)=>{setFormData({...formData , phoneNumber:e.target.value})}} value={formData.phoneNumber} type="text" className='h-[44px] rounded-md px-2 outline-none focus:placeholder:text-xs focus:placeholder:-translate-y-2' placeholder='   Telefon numaranız' />
+                                <input onChange={(e) => { setFormData({ ...formData, phoneNumber: e.target.value }) }} value={formData.phoneNumber} type="text" className='h-[44px] rounded-md px-2 outline-none focus:placeholder:text-xs focus:placeholder:-translate-y-2' placeholder='   Telefon numaranız' />
                             </div>
                         </div>
-                        
+
                         <div className=' active:scale-95 hover:scale-105 transition-all'><button type='submit' className='h-10 font-medium tracking-widest text-gray-900 w-auto bg-brand-color rounded-md px-8'>Gönder</button></div>
 
-                        <button onClick={()=>{setisActive(false)}} className=' absolute cursor-pointer text-xl top-1 font-bold text-gray-800 hover:text-gray-100 active:scale-90 right-3'>X</button>
+                        <button onClick={() => { setisActive(false) }} className=' absolute cursor-pointer text-xl pt-1 top-1 font-bold text-gray-100 md:text-gray-800 hover:text-gray-100 active:scale-90 right-3'>
+                            <AiOutlineCloseCircle size={24}></AiOutlineCloseCircle>
+                        </button>
 
                     </form>
                 </div>
@@ -44,7 +49,7 @@ export default function WhyFihair() {
     }
 
     return (
-        <div className='relative w-auto h-screen bg-cover bg-no-repeat' style={{ backgroundImage: `url(${whyFihair}` }}>
+        <div className='relative flex  items-end md:items-start justify-end w-auto h-96 xl:h-screen bg-cover bg-no-repeat' style={{ backgroundImage: `url(${whyFihair}` }}>
 
             <div className='absolute flex flex-col  left-[2%] top-[5%] gap-y-12 '>
                 <div className='flex items-center justify-center gap-x-3'>
@@ -57,9 +62,9 @@ export default function WhyFihair() {
                 </div>
             </div>
 
-            <div className='absolute top-16 right-14'>
+            <div className='md:pt-32 md:pr-16'>
                 <button onClick={() => { setisActive(true) }} className='bg-brand-color text-xl hover:text-black active:scale-95 transition-transform
-                 text-white h-8 w-auto px-12 py-8 flex rounded-xl items-center justify-center'>Sorularınız Mı Var ?</button>
+                 text-white h-8 w-auto px-12 py-8 flex md:rounded-xl items-center justify-center'>Sorularınız Mı Var ? , Formu Doldurun Sizi Arayalım.</button>
             </div>
 
             {modalActive()}
