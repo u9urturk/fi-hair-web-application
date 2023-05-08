@@ -19,7 +19,7 @@ export default function Header() {
         <div className='hidden md:flex items-center justify-center gap-x-4'>
           <div className='flex items-center gap-x-2  cursor-pointer text-brand-color hover:text-black transition-colors'>
             <ImWhatsapp size={34} ></ImWhatsapp>
-            <strong>0 504 404 44 44</strong>
+            <strong>+90 538 708 80 40</strong>
           </div>
           <Button>ONLINE RANDEVU</Button>
         </div>

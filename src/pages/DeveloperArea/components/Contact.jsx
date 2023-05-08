@@ -16,7 +16,7 @@ export default function Contact() {
         </div>
       </div>
       <div >
-        <iframe className='rounded-2xl  w-auto mb-4 md:w-[500px] md:h-[300px] md:mb-0 h-auto  shadow-2xl shadow-brand-color md:shadow-transparent md:hover:shadow-brand-color transition-shadow' src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d95682.64397605402!2d31.717758967915866!3d41.45912325330366!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x409c7c43e91296e7%3A0x24080dea6d843794!2sZonguldak%2C%20Zonguldak%20Merkez%2FZonguldak!5e0!3m2!1str!2str!4v1681635623169!5m2!1str!2str" width="500" height="300" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <iframe className='rounded-2xl  w-auto mb-4 md:w-[500px] md:h-[300px] md:mb-0 h-auto  shadow-2xl shadow-brand-color md:shadow-transparent md:hover:shadow-brand-color transition-shadow' src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2990.301336852184!2d31.789471199999998!3d41.454379200000005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x409c7da0a09ddb77%3A0x22f7d81c552762af!2sFi%20Hair%20Clinic!5e0!3m2!1str!2str!4v1683572299248!5m2!1str!2str" width="500" height="300" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
     </div>
   )

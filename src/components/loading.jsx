@@ -2,17 +2,18 @@ import Icon from './Icon'
 
 
 export default function Loading() {
-    const logo = process.env.PUBLIC_URL + `fihair-logo.PNG`
-    const frame = process.env.PUBLIC_URL + `fihair-frame.svg`
-   
+    
+
 
 
     return (
-        <div  className="fixed flex flex-col items-center  bg-gradient-to-b  from-[#507BB7]  to-lime-100 justify-center h-full w-full  backdrop-blur-sm ">
-            <div className='transition-all animate-pulse relative flex flex-col items-center justify-center gap-y-5'  id='icon'>
-                <img  width={100} height={100} src={logo} alt="" />
-                <div className='absolute mr-1 mt-8 '><Icon name="fihair-frame2" title={frame} width={1300}></Icon></div>
-                <strong className='font-thin  text-6xl tracking-widest' >FiHair</strong>
+        <div className="fixed flex flex-col items-center  bg-gradient-to-b  from-[#507BB7]  to-gray-100 justify-center h-full w-full  backdrop-blur-sm ">
+            <div className='transition-all animate-pulse relative flex flex-col items-center justify-center gap-y-5' id='icon'>
+                <div><Icon name={'fihair-logo-new'} title={'logo'} width={250}></Icon></div>
+                <div className='flex items-center justify-center gap-x-2'>
+                    <strong className='text-3xl font-medium font-serif tracking-widest'>Fi</strong>
+                    <strong className='text-3xl font-medium text-brand-color font-serif tracking-widest'>Hair</strong>
+                </div>
             </div>
         </div>
     )
