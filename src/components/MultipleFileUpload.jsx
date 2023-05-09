@@ -87,7 +87,7 @@ export default function MultipleFileUpload({formData,onClose}) {
     <div className='flex flex-col items-center justify-center gap-y-5'>
       <input type="file" onChange={((e) => { setFileList(e.target.files) })} />
 
-      <button className='h-10 font-medium hover:scale-95 transition-all tracking-widest text-gray-900 w-auto bg-brand-color rounded-md px-8' onClick={handleUpload}>Gönder</button>
+      <button className='h-10 font-medium hover:scale-95 transition-all tracking-widest text-gray-100 w-auto bg-brand-color rounded-md px-8' onClick={handleUpload}>Gönder</button>
       <ProgressBarCustom percentage={progress}></ProgressBarCustom>
     </div>
   )

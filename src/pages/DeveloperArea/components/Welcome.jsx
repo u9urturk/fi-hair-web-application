@@ -8,15 +8,15 @@ export default function Welcome() {
                 <div className=' flex items-center justify-center gap-x-3'>
                     <div className='border-[1px] border-white  h-0 w-8'></div>
                     <div className='text-white font-serif font-normal'>
-                        Hoş Geldiniz
+                        HOŞ GELDİNİZ
                     </div>
                     <div className='border-[1px] border-white h-0 w-8'></div>
                 </div>
-                <div className='text-2xl font-serif font-light'>
-                    20 Yıllık Deneyim ile En Çok Tercih Edilen Saç Ekim Merkezi
+                <div className='text-xl md:text-2xl font-serif font-light'>
+                    Fi Hair, 20 Yıllık Deneyimiyle Yaşamlarınıza Özgüven, Kalite, Mutluluk ve SANAT Katmayı Amaçlamış Bir Saç Ekim Kliniğidir.
                 </div>
                 <div className='text-xs tracking-normal font-serif font-normal'>
-                    Ağrısız ve Acısız. Binlerce Başarılı Uygulama, %100 Müşteri Memnuniyeti, Türkiye ve Dünya'dan Müşteriler. Maksimum Greft Sayısı.
+                    Alanında uzman doktorlar, tecrübeli tıbbi ve idari personellerden oluşan ekibimizle tüm tedavi süreçlerinde yanınızda oluyor, sizin için otel rezervasyonları ve transfer süreçlerini ücretsiz olarak planlıyoruz.
                 </div>
             </div>
             <div className='flex flex-col items-center md:items-start justify-center gap-y-8 py-8'>

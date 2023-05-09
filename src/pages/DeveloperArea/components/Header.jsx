@@ -6,7 +6,7 @@ import Icon from '../../../components/Icon'
 export default function Header() {
 
   return (
-    <div className='w-full h-auto flex items-center justify-center py-6'>
+    <div className='w-full relative h-auto flex items-center justify-center py-6'>
       <div className='flex items-center gap-x-96'>
         <div className='flex items-center justify-center gap-x-3'>
           <Icon name={'fihair-logo-new'} title={'logo'} width={90}></Icon>
@@ -24,6 +24,7 @@ export default function Header() {
           <Button>ONLINE RANDEVU</Button>
         </div>
       </div>  
+      <div className='absolute left-1 top-1 font-thin'><strong>Beta Version : 0.1.0v</strong></div>
     </div>
   )
 }

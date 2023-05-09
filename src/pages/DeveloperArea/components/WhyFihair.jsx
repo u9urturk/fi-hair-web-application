@@ -36,7 +36,7 @@ export default function WhyFihair() {
                             </div>
                         </div>
 
-                        <div className=' active:scale-95 hover:scale-105 transition-all'><button type='submit' className='h-10 font-medium tracking-widest text-gray-900 w-auto bg-brand-color rounded-md px-8'>Gönder</button></div>
+                        <div className=' active:scale-95 hover:scale-105 transition-all'><button type='submit' className='h-10 font-medium tracking-widest text-gray-100 w-auto bg-brand-color rounded-md px-8'>Gönder</button></div>
 
                         <button onClick={() => { setisActive(false) }} className=' absolute cursor-pointer text-xl pt-1 top-1 font-bold text-gray-100 md:text-gray-800 hover:text-gray-100 active:scale-90 right-3'>
                             <AiOutlineCloseCircle size={24}></AiOutlineCloseCircle>

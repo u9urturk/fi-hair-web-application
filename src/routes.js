@@ -6,17 +6,17 @@ import MainLayout from "./pages/MainLayout";
 const routes =  [
     {
         path:'/',
-        element:<MainLayout></MainLayout>,
+        element:<Layout></Layout>,
         children:[
-            {
-                index:true,
-                element:<Home></Home>
-            },
-            {
-                path:'layout',
-                auth:true,
-                element:<Layout></Layout>
-            }
+            // {
+            //     index:true,
+            //     element:<Home></Home>
+            // },
+            // {
+            //     path:'layout',
+            //     auth:true,
+            //     element:<Layout></Layout>
+            // }
         ]
     }
 ]

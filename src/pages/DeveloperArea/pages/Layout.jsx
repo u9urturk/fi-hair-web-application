@@ -19,12 +19,14 @@ import Contact from '../components/Contact'
 import Footer from '../components/Footer'
 import FooterDeveloper from '../components/FooterDeveloper'
 import Inbox from '../components/inbox.jsx'
+import { useSelector } from 'react-redux'
 
 
 
 
 export default function Layout() {
   const logoutLy = () => store.dispatch(logout())
+  const user = useSelector(state => state.auth.user)
   const [isOpen, setIsOpen] = useState(false)
   const whatsapp = process.env.PUBLIC_URL + `/whatsapp.png`
   return (
@@ -49,8 +51,8 @@ export default function Layout() {
           <a href="https://www.instagram.com/fihairclinic/" target={'_blank'}><BsInstagram className='text-gray-800  hover:scale-105'></BsInstagram></a>
           <a href=""><FiTwitter className='hover:scale-105 text-gray-800 '></FiTwitter></a>
           <a href=""><AiOutlineFacebook className='hover:scale-105 text-gray-800 '></AiOutlineFacebook></a>
-          <button onClick={()=>{setIsOpen(true)}}><MdForwardToInbox></MdForwardToInbox></button>
-          <button onClick={logoutLy}><RiLogoutCircleRLine></RiLogoutCircleRLine></button>
+          {user&&<button onClick={()=>{setIsOpen(true)}}><MdForwardToInbox></MdForwardToInbox></button>}
+          {/* <button onClick={logoutLy}><RiLogoutCircleRLine></RiLogoutCircleRLine></button> */}
         </div>
       </div>
       <Inbox isOpen={isOpen} onClose={()=>{setIsOpen(false)}}></Inbox>
