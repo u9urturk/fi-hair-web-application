@@ -31,18 +31,13 @@ export default function Layout() {
   const whatsapp = process.env.PUBLIC_URL + `/whatsapp.png`
   return (
     <div className='relative '>
-      <Header></Header>
-      <Navbar></Navbar>
       <SliderCmp></SliderCmp>
       <Communication></Communication>
       <Analysis></Analysis>
       <Welcome></Welcome>
       <FemaleType></FemaleType>
       <BeforeAfter></BeforeAfter>
-      <WhyFihair></WhyFihair>
-      <Contact></Contact>
-      <Footer></Footer>
-      <FooterDeveloper></FooterDeveloper>
+      <WhyFihair></WhyFihair>      
       <div className='fixed -left-8 bottom-2 h-auto w-auto'>
         <img className='w-40 h-auto transition-all active:scale-95 cursor-pointer hover:scale-105' src={whatsapp} alt="" />
       </div>

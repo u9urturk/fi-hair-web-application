@@ -1,13 +1,54 @@
 import PrivateRoute from "./components/PrivateRoute";
+import DhiHairTransplant from "./pages/DeveloperArea/pages/DhiHairTransplant";
+import Fihair from "./pages/DeveloperArea/pages/Fihair";
+import HairTransplant from "./pages/DeveloperArea/pages/HairTransplant";
 import Layout from "./pages/DeveloperArea/pages/Layout";
-import Home from "./pages/Home";
+import Mezoterapi from "./pages/DeveloperArea/pages/Mezoterapi";
+import SafirFueHairTranplant from "./pages/DeveloperArea/pages/SafirFueHairTranplant";
+import Prp from "./pages/DeveloperArea/pages/Prp";
 import MainLayout from "./pages/MainLayout";
 
 const routes =  [
     {
         path:'/',
-        element:<Layout></Layout>,
+        element:<MainLayout></MainLayout>,
         children:[
+            {
+                index:true,
+                element:<Layout></Layout>
+            },
+            {
+                path:"hakkimizda",
+                element:<Fihair></Fihair>
+            },
+            {
+                path:"sac-ekimi",
+                element:<HairTransplant></HairTransplant>
+            },
+            {
+                path:"teknikler/dhi",
+                element:<DhiHairTransplant></DhiHairTransplant>
+            },
+            {
+                path:"teknikler/safir-fue",
+                element:<SafirFueHairTranplant></SafirFueHairTranplant>
+            },
+            {
+                path:"hizmetler/sac-ekimi",
+                element:<HairTransplant></HairTransplant>
+            },
+            {
+                path:"hizmetler/sac-analizi",
+                element:<HairTransplant></HairTransplant>
+            },
+            {
+                path:"hizmetler/mezoterapi",
+                element:<Mezoterapi></Mezoterapi>
+            },
+            {
+                path:"hizmetler/prp",
+                element:<Prp></Prp>
+            },
             // {
             //     index:true,
             //     element:<Home></Home>
