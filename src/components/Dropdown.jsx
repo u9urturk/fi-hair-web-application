@@ -10,7 +10,7 @@ export default function Dropdown({ ...props } ) {
         <div onBlur={()=>{setTimeout(() => {
             setIsOpen(false)
         }, 200);}} className="relative flex justify-center items-center ">
-            <Link to={props.link}  className="cursor-pointer w-44 md:w-auto rounded-tl-3xl md:bg-transparent px-4 rounded-br-3xl bg-gradient-to-br from-gray-100 to-brand-color  flex justify-center items-center duration-75 md:hover:scale-105 transition-transform shadow md:shadow-none md:hover:shadow rounded  py-1  group" onClick={() => setIsOpen(!isOpen)}>
+            <Link to={props.link}  className="cursor-pointer w-44 md:w-auto rounded-tl-3xl md:bg-transparent px-4 rounded-br-3xl    flex justify-center items-center duration-75 md:hover:scale-105 transition-transform shadow md:shadow-none md:hover:shadow rounded  py-1  group" onClick={() => setIsOpen(!isOpen)}>
                 {props.name}
             </Link>
             {isOpen && props.options&& (
