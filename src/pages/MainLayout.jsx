@@ -5,6 +5,7 @@ import Navbar from './DeveloperArea/components/Navbar'
 import Footer from './DeveloperArea/components/Footer'
 import FooterDeveloper from './DeveloperArea/components/FooterDeveloper'
 import Contact from './DeveloperArea/components/Contact'
+import MobileFooter from './DeveloperArea/components/MobileFooter'
 
 export default function MainLayout() {
   return (
