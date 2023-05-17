@@ -16,8 +16,8 @@ export default function HairTransplant() {
                 <div className='px-12 py-8 bg-gradient-to-l from-gray-100 to-brand-color rounded-sm rounded-tl-3xl rounded-br-3xl'>
                     <strong className='font-serif tracking-widest  text-gray-500'>Saç Ekimi Hakkında Bilgilendirme</strong>
                 </div>
-                <div className=' flex items-center justify-center gap-x-10'>
-                    <div className='flex flex-col items-start justify-center gap-y-4 text-2xl'>
+                <div className='relative flex flex-col md:flex-row  items-center justify-center gap-x-10'>
+                    <div className='flex flex-col items-center justify-center gap-y-4 text-2xl'>
                         <h1>Saç Ekimi Nedir ?</h1>
                         <p className='font-serif text-gray-500 text-sm'>
 
@@ -41,7 +41,7 @@ export default function HairTransplant() {
                             Bugün, 1-4 hücre içeren doğal saç köklerinin ileri tekniklerle alınıp grup olarak transfer edilmesine FUT “Follicular Unit Transplantation” denilmekte ve saç kaybı/kellik problemi olan kişiler tarafından bu yöntem hızla artan şekilde tercih edilmektedir.
                         </p>
                     </div>
-                    <img className='w-[520px] rounded-3xl h-auto' src={image[0].url} alt="hakkinda" />
+                    <img className='w-[520px] mt-2 md:mt-0 rounded-3xl h-auto' src={image[0].url} alt="hakkinda" />
                 </div>
 
                 <div className=' flex items-center justify-center gap-x-10'>
@@ -81,7 +81,7 @@ export default function HairTransplant() {
                         </p>
                     </div>
                 </div>
-                <div className=' flex items-center justify-center gap-x-10'>
+                <div className=' flex flex-col md:flex-row items-center justify-center gap-x-10'>
                     <div className='flex flex-col items-start justify-center gap-y-4 text-2xl'>
                         <h1>Teşhis ve Analiz </h1>
                         <p className='font-serif text-gray-500 text-sm'>
@@ -110,7 +110,7 @@ export default function HairTransplant() {
 
                         </p>
                     </div>
-                    <img className='w-[520px] rounded-3xl h-auto' src={image[1].url} alt="hakkinda" />
+                    <img className='w-[520px] mt-4 md:mt-0 rounded-3xl h-auto' src={image[1].url} alt="hakkinda" />
                 </div>
             </div>
         </div>

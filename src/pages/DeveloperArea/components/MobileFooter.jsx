@@ -4,7 +4,6 @@ import Dropdown from '../../../components/Dropdown'
 
 
 export default function MobileFooter({ isOpen, close }) {
-    console.log(isOpen)
 
     if (isOpen) {
         return (
@@ -19,24 +18,33 @@ export default function MobileFooter({ isOpen, close }) {
 
                         </div>
                     </div>
-                    <div className='flex flex-col items-center  gap-y-4 text-xl'>
-                        <Dropdown name={"Anasayfa"} link={"/"}></Dropdown>
-                        <Dropdown name={"Fi Hair"} link={"/hakkimizda"} ></Dropdown>
-                        <Dropdown name={"Saç Ekimi"} link={"/sac-ekimi"} ></Dropdown>
-                        <Dropdown name={"Teknikler"}
-                            options={[
-                                { name: "DHI Tekniği", link: "/teknikler/dhi" },
-                                { name: "Safir FUE Tekniği", link: "/teknikler/safir-fue" }
-                            ]} ></Dropdown>
-                        <Dropdown name={"Hizmetlerimiz"}
-                            options={[
-                                { name: "Saç Transplantasyonu", link: "/hizmetler/sac-ekimi" },
-                                { name: "Saç Analizi", link: "/hizmetler/sac-analizi" },
-                                { name: "Mezoterapi Uygulaması", link: "/hizmetler/mezoterapi" },
-                                { name: "PRP Uygulaması", link: "/hizmetler/prp" }
-                            ]} ></Dropdown>
-                        <Dropdown name={"SSS"} link={"/sss"} ></Dropdown>
-                        <Dropdown name={"İletişim"} link={"/contact"} ></Dropdown>
+                    <div className='flex flex-col items-center gap-y-4   text-xl'>
+                        <div onClick={close} className='flex flex-col items-center gap-y-4'>
+                            <Dropdown name={"Anasayfa"} link={"/"}></Dropdown>
+                            <Dropdown name={"Fi Hair"} link={"/hakkimizda"} ></Dropdown>
+                            <Dropdown name={"Saç Ekimi"} link={"/sac-ekimi"} ></Dropdown>
+                        </div>
+                        <div className='flex flex-col items-center gap-y-4'>
+                            <Dropdown name={"Teknikler"}
+                                close={close}
+                                options={[
+                                    { name: "DHI Tekniği", link: "/teknikler/dhi" },
+                                    { name: "Safir FUE Tekniği", link: "/teknikler/safir-fue" }
+                                ]} ></Dropdown>
+                            <Dropdown name={"Hizmetlerimiz"}
+                                close={close}
+
+                                options={[
+                                    { name: "Saç Transplantasyonu", link: "/hizmetler/sac-ekimi" },
+                                    { name: "Saç Analizi", link: "/hizmetler/sac-analizi" },
+                                    { name: "Mezoterapi Uygulaması", link: "/hizmetler/mezoterapi" },
+                                    { name: "PRP Uygulaması", link: "/hizmetler/prp" }
+                                ]} ></Dropdown>
+                        </div>
+                        <div onClick={close} className='flex flex-col items-center gap-y-4'>
+                            <Dropdown name={"SSS"} link={"/sss"} ></Dropdown>
+                            <Dropdown name={"İletişim"} link={"/contact"} ></Dropdown>
+                        </div>
                     </div>
                 </div>
             </div>
