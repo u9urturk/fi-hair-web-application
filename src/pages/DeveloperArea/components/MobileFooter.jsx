@@ -1,6 +1,7 @@
 import React from 'react'
 import Icon from '../../../components/Icon'
 import Dropdown from '../../../components/Dropdown'
+import { IoMdClose } from "react-icons/io"
 
 
 export default function MobileFooter({ isOpen, close }) {
@@ -9,7 +10,7 @@ export default function MobileFooter({ isOpen, close }) {
         return (
             <div className='fixed  z-10 bg-gradient-to-tr from-brand-color to-gray-100 w-full h-full top-0 left-0'>
                 <div className='flex relative flex-col items-center pt-32 justify-start gap-y-20 w-full h-full'>
-                    <div onClick={close} className='absolute top-5 right-5 text-black text-3xl'>X</div>
+                    <div onClick={close} className='absolute top-5 right-5 text-black text-3xl cursor-pointer'><IoMdClose size={30}></IoMdClose></div>
                     <div className='flex items-center justify-center gap-x-3'>
                         <Icon name={'fihair-logo-new'} title={'logo'} width={90}></Icon>
                         <div className='space-x-1'>
@@ -25,12 +26,6 @@ export default function MobileFooter({ isOpen, close }) {
                             <Dropdown name={"Saç Ekimi"} link={"/sac-ekimi"} ></Dropdown>
                         </div>
                         <div className='flex flex-col items-center gap-y-4'>
-                            <Dropdown name={"Teknikler"}
-                                close={close}
-                                options={[
-                                    { name: "DHI Tekniği", link: "/teknikler/dhi" },
-                                    { name: "Safir FUE Tekniği", link: "/teknikler/safir-fue" }
-                                ]} ></Dropdown>
                             <Dropdown name={"Hizmetlerimiz"}
                                 close={close}
 
@@ -40,6 +35,13 @@ export default function MobileFooter({ isOpen, close }) {
                                     { name: "Mezoterapi Uygulaması", link: "/hizmetler/mezoterapi" },
                                     { name: "PRP Uygulaması", link: "/hizmetler/prp" }
                                 ]} ></Dropdown>
+                            <Dropdown name={"Teknikler"}
+                                close={close}
+                                options={[
+                                    { name: "DHI Tekniği", link: "/teknikler/dhi" },
+                                    { name: "Safir FUE Tekniği", link: "/teknikler/safir-fue" }
+                                ]} ></Dropdown>
+
                         </div>
                         <div onClick={close} className='flex flex-col items-center gap-y-4'>
                             <Dropdown name={"SSS"} link={"/sss"} ></Dropdown>
