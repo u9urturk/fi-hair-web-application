@@ -15,7 +15,8 @@ export default function FemaleType() {
 
                     </div>
                 </div>
-                <button className='h-12 w-auto ml-2 px-8 text-white font-semibold tracking-wider hover:text-gray-800 cursor-pointer bg-brand-color rounded-lg'>Bize Ulaşın</button>
+                
+                <a href="https://wa.me/905387088040" target="_blank"><button className='h-12 w-auto ml-2 px-8 text-white font-semibold tracking-wider hover:text-gray-800 cursor-pointer bg-brand-color rounded-lg'>Bize Ulaşın</button></a>
             </div>
 
         </div>

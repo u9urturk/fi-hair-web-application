@@ -17,11 +17,11 @@ export default function Header() {
           </div>
         </div>
         <div className='hidden md:flex items-center justify-center gap-x-4'>
-          <div className='flex items-center gap-x-2  cursor-pointer text-brand-color hover:text-[#35c42b] transition-colors'>
+          <a href="https://wa.me/905387088040" target="_blank" className='flex items-center gap-x-2  cursor-pointer text-brand-color hover:text-[#35c42b] transition-colors'>
             <ImWhatsapp size={34} ></ImWhatsapp>
             <strong>+90 538 708 80 40</strong>
-          </div>
-          <Button>ONLINE RANDEVU</Button>
+          </a>
+          <a href="https://wa.me/905387088040" target="_blank"><Button>ONLINE RANDEVU</Button></a>
         </div>
       </div>  
       <div className='absolute left-1 top-1 font-thin'><strong>Beta Version : 0.1.0v</strong></div>

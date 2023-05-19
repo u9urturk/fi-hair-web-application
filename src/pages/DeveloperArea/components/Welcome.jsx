@@ -36,7 +36,8 @@ export default function Welcome() {
                     </div>
 
                 </ul>
-                <button className='w-auto h-12 bg-brand-color px-4 rounded-lg hover:text-gray-800 transition-colors text-white'>Şimdi Randevu Alın</button>
+                
+                <a href="https://wa.me/905387088040" target="_blank"><button className='w-auto h-12 bg-brand-color px-4 rounded-lg hover:text-gray-800 transition-colors text-white'>Şimdi Randevu Alın</button></a>
             </div>
         </div>
     )
