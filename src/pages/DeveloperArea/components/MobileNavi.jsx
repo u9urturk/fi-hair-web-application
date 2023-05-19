@@ -44,7 +44,6 @@ export default function MobileFooter({ isOpen, close }) {
 
                         </div>
                         <div onClick={close} className='flex flex-col items-center gap-y-4'>
-                            <Dropdown name={"SSS"} link={"/sss"} ></Dropdown>
                             <Dropdown name={"İletişim"} link={"/contact"} ></Dropdown>
                         </div>
                     </div>

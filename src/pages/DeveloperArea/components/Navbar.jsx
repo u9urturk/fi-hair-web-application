@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import {FiMenu} from "react-icons/fi"
 import Dropdown from '../../../components/Dropdown'
-import MobileFooter from './MobileFooter'
+import MobileFooter from './MobileNavi'
 export default function Navbar() {
     const [isOpen, setisOpen] = useState(false);
     return (
@@ -22,7 +22,6 @@ export default function Navbar() {
                     {name:"Mezoterapi Uygulaması",link:"/hizmetler/mezoterapi"},
                     {name:"PRP Uygulaması",link:"/hizmetler/prp"}
                 ]} ></Dropdown>
-                <Dropdown name={"SSS"} link={"/sss"} ></Dropdown>
                 <Dropdown name={"İletişim"} link={"/contact"} ></Dropdown>
             </div>
             <div className='md:hidden p-3 rounded-tl-3xl rounded-br-3xl rounded-md  bg-gradient-to-t from-transparent  to-blue-200 '>

@@ -7,6 +7,7 @@ import Mezoterapi from "./pages/DeveloperArea/pages/Mezoterapi";
 import SafirFueHairTranplant from "./pages/DeveloperArea/pages/SafirFueHairTranplant";
 import Prp from "./pages/DeveloperArea/pages/Prp";
 import MainLayout from "./pages/MainLayout";
+import ContactPage from "./pages/DeveloperArea/pages/ContactPage";
 
 const routes =  [
     {
@@ -48,6 +49,10 @@ const routes =  [
             {
                 path:"hizmetler/prp",
                 element:<Prp></Prp>
+            },
+            {
+                path:"contact",
+                element:<ContactPage></ContactPage>
             },
             // {
             //     index:true,

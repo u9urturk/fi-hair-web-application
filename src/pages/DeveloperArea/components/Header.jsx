@@ -17,7 +17,7 @@ export default function Header() {
           </div>
         </div>
         <div className='hidden md:flex items-center justify-center gap-x-4'>
-          <div className='flex items-center gap-x-2  cursor-pointer text-brand-color hover:text-black transition-colors'>
+          <div className='flex items-center gap-x-2  cursor-pointer text-brand-color hover:text-[#35c42b] transition-colors'>
             <ImWhatsapp size={34} ></ImWhatsapp>
             <strong>+90 538 708 80 40</strong>
           </div>

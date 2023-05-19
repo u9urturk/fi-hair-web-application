@@ -17,11 +17,11 @@ export default function Dropdown({ ...props }) {
             </Link>
             {isOpen && props.options && (
                 <div className='relative transition-all flex justify-center items-center '>
-                    <div className="md:absolute -right-6 top-10 min-w-[160px] transition-all  py-4 rounded-b-3xl drop-shadow-lg z-[1]">
+                    <div className="md:absolute -right-6 top-7 min-w-[160px] transition-all  md:bg-brand-color md:bg-opacity-40 py-4 rounded-b-3xl drop-shadow-lg z-[1]">
                         {
                             props.options && props.options.map((res, key) => {
                                 return (
-                                    <Link to={res.link} onClick={props.close} key={key} className='px-4 py-3 block hover:text-brand-color text-center font-serif font-extralight transition-all' >{res.name}</Link>
+                                    <Link to={res.link} onClick={props.close} key={key} className='px-4 py-3 block text-sm  hover:text-brand-color text-center font-serif font-extralight transition-all' >{res.name}</Link>
                                 )
 
                             })

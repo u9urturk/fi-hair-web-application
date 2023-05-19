@@ -8,7 +8,7 @@ export default function Fihair() {
                 <div className='px-12 py-8 bg-gradient-to-l from-gray-100 to-brand-color rounded-sm rounded-tl-3xl rounded-br-3xl'>
                     <strong className='font-serif tracking-widest  text-gray-500'>Hakkımızda</strong>
                 </div>
-                <div className=' flex items-center justify-center gap-x-10'>
+                <div className=' flex flex-col md:flex-row items-center justify-center gap-x-10'>
                     <div className='flex flex-col items-start justify-center gap-y-4 text-2xl'>
                         <h1>Hoş geldiniz ! </h1>
                         <p className='font-serif text-gray-500 text-sm'>
@@ -23,7 +23,7 @@ export default function Fihair() {
                             Alanında uzman doktorlar, tecrübeli tıbbi ve idari personellerden oluşan ekibimizle tüm tedavi süreçlerinde yanınızda oluyor, sizin için otel rezervasyonları ve transfer süreçlerini ücretsiz olarak planlıyoruz.
                         </p>
                     </div>
-                    <img className='w-[520px] rounded-3xl h-auto' src={image} alt="hakkinda" />
+                    <img className='w-[520px] rounded-3xl pt-5 md:pt-0 h-auto' src={image} alt="hakkinda" />
                 </div>
             </div>
         </div>
