@@ -8,6 +8,7 @@ import SafirFueHairTranplant from "./pages/DeveloperArea/pages/SafirFueHairTranp
 import Prp from "./pages/DeveloperArea/pages/Prp";
 import MainLayout from "./pages/MainLayout";
 import ContactPage from "./pages/DeveloperArea/pages/ContactPage";
+import PrivacyPolicy from "./components/PrivacyPolicy";
 
 const routes =  [
     {
@@ -53,6 +54,10 @@ const routes =  [
             {
                 path:"contact",
                 element:<ContactPage></ContactPage>
+            },
+            {
+                path:"privacy-policy",
+                element:<PrivacyPolicy></PrivacyPolicy>
             },
             // {
             //     index:true,

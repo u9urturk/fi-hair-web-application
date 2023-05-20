@@ -24,7 +24,7 @@ export default function Header() {
           <a href="https://wa.me/905387088040" target="_blank"><Button>ONLINE RANDEVU</Button></a>
         </div>
       </div>  
-      <div className='absolute left-1 top-1 font-thin'><strong>Beta Version : 0.1.0v</strong></div>
+      {/* <div className='absolute left-1 top-1 font-thin'><strong>Beta Version : 0.1.0v</strong></div> */}
     </div>
   )
 }
