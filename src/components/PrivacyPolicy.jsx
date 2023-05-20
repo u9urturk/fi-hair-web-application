@@ -35,7 +35,7 @@ export default function PrivacyPolicy() {
 
 
             </div>
-            <div className='w-full   md:w-[calc(100%-300px)]  container flex flex-col py-10 px-5 text-gray-700 mb-48 hover:text-gray-900 bg-gray-200 rounded-md  items-start justify-center  gap-y-5 '>
+            <div className='w-full   md:w-[calc(100%-300px)]  container flex flex-col py-10 px-5 text-gray-700 mb-28 hover:text-gray-900 bg-gray-200 rounded-md  items-start justify-center  gap-y-5 '>
                 <h1 className="font-semibold">2. KAYNAKLAR</h1>
                 <p>Sizinle ilgili olarak elde ettiğimiz bilgiler, size en uygun hizmeti sunmamızı ve bu hizmetlerin kalitesini sürekli olarak artırmayı temin etmeye yöneliktir. Bu bilgiler aşağıda belirtilen şekillerde temin edilmektedir.
 

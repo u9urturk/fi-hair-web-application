@@ -82,7 +82,7 @@ export default function BeforeAfter() {
                 </div>
             </div>
 
-            <div className=' md:hidden  border-y-8 rounded border-brand-color my-5 '>
+            <div className=' md:hidden  border-y-8  border-brand-color my-5 '>
                 <h1 className='font-semibold text-2xl text-center py-5'>Bizi Tercih Edenler</h1>
                 <Slider {...settings}>
                     <img src={getBAImage(1)} className="h-[300px]" alt="slide1" />

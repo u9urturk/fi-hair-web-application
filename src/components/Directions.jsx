@@ -1,17 +1,16 @@
 import React from 'react'
 import { useState } from 'react'
 import { useSelector } from 'react-redux'
-import store from '../store'
-import { logout } from '../store/auth'
 import { FiTwitter } from 'react-icons/fi'
 import { AiOutlineFacebook } from 'react-icons/ai'
 import { BsInstagram } from 'react-icons/bs'
 import { MdForwardToInbox } from 'react-icons/md'
 import Inbox from '../pages/DeveloperArea/components/inbox'
+import Models from './Models'
 
 export default function Directions() {
 
-    const logoutLy = () => store.dispatch(logout())
+    
     const user = useSelector(state => state.auth.user)
     const [isOpen, setIsOpen] = useState(false)
     const whatsapp = process.env.PUBLIC_URL + `/whatsapp.png`
@@ -26,8 +25,9 @@ export default function Directions() {
                     <a href="https://www.instagram.com/fihairclinic/" target={'_blank'}><BsInstagram className='text-gray-800  hover:scale-105'></BsInstagram></a>
                     <a href=""><FiTwitter className='hover:scale-105 text-gray-800 '></FiTwitter></a>
                     <a href=""><AiOutlineFacebook className='hover:scale-105 text-gray-800 '></AiOutlineFacebook></a>
+                    <Models></Models>
                     {user && <button onClick={() => { setIsOpen(true) }}><MdForwardToInbox></MdForwardToInbox></button>}
-                    {/* <button onClick={logoutLy}><RiLogoutCircleRLine></RiLogoutCircleRLine></button> */}
+                    
                 </div>
             </div>
             <Inbox isOpen={isOpen} onClose={() => { setIsOpen(false) }}></Inbox>
