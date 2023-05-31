@@ -56,7 +56,7 @@ export default function WhyFihair() {
                             </div>
                         </div>
                         <ReCAPTCHA
-                            sitekey="6LepJFYmAAAAAODEeFg4M5Qbk5DoPuYemapJHcvJ"
+                            sitekey="6LepJFYmAAAAANuyHTyPC5Xnu5iHvREo2duYkzwU"
                             onChange={handleRecaptchaChange}
                         />
 
