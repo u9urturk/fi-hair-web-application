@@ -1,8 +1,10 @@
 import React from 'react'
 import { addFormContact } from '../../../firebase'
 import { useState } from 'react'
-import { AiOutlineCloseCircle } from 'react-icons/ai'
 import Icon from '../../../components/Icon'
+import { useRef } from 'react'
+import { toast } from 'react-toastify'
+import ReCAPTCHA from 'react-google-recaptcha'
 
 export default function ContactPage() {
 
@@ -10,14 +12,33 @@ export default function ContactPage() {
     fullName: "",
     phoneNumber: ""
   })
-  const addFormContact_ = (formData) => {
-    addFormContact(formData)
-  }
+  const [isVerified, setIsVerified] = useState(false);
+  const captchaRef = useRef(null)
 
-  const handleSubmit = (e) => {
+  const handleRecaptchaChange = (response) => {
+    if (response) {
+        setIsVerified(true);
+    } else {
+        setIsVerified(false);
+    }
+};
+
+const addFormContact_ = (formData) => {
+    addFormContact(formData)
+}
+
+const handleSubmit = (e) => {
     e.preventDefault()
-    addFormContact_(formData);
-  }
+    captchaRef.current.reset();
+    if (isVerified) {
+        addFormContact_(formData);
+        toast.success("En Kısa Sürede Dönüş Yapacağız , Sağlıcakla Kalın...")
+    } else {
+        // reCAPTCHA doğrulaması başarısız
+        toast.warning("Gerçek bir kişimi yoksa robot mu olduğunuzu anlayamadık. Lütfen tekrar deneyiniz... ")
+    }
+
+}
   return (
     <div className='w-full h-auto'>
       <div className='relative flex items-center justify-center py-20 bg-gradient-to-tr from-brand-color to-gray-100'>
@@ -28,6 +49,11 @@ export default function ContactPage() {
             <div className='flex items-center justify-center gap-x-2 '>
               <input onChange={(e) => { setFormData({ ...formData, phoneNumber: e.target.value }) }} value={formData.phoneNumber} type="text" className='w-full h-[44px]  rounded-md px-6 outline-none focus:placeholder:text-xs focus:placeholder:-translate-y-2' placeholder='Telefon numaranız' />
             </div>
+            <ReCAPTCHA
+                                sitekey="6LdzflYmAAAAANsANpl_tkcndr5ZoPX3uG2sgM49"
+                                onChange={handleRecaptchaChange}
+                                ref={captchaRef}
+                            />
           </div>  
 
           <div className=' active:scale-95 hover:scale-105 transition-all'><button type='submit' className='h-10 font-medium tracking-widest text-gray-100 w-auto bg-brand-color rounded-md px-8'>Gönder</button></div>

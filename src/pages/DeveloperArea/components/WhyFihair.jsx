@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import Icon from '../../../components/Icon'
 import { addFormContact } from '../../../firebase'
 import { AiOutlineCloseCircle } from 'react-icons/ai'
@@ -12,7 +12,7 @@ export default function WhyFihair() {
 
     const [isActive, setisActive] = useState(false)
     const [isVerified, setIsVerified] = useState(false);
-
+    const captchaRef = useRef(null)
     const [formData, setFormData] = useState({
         fullName: "",
         phoneNumber: ""
@@ -32,6 +32,7 @@ export default function WhyFihair() {
 
     const handleSubmit = (e) => {
         e.preventDefault()
+        captchaRef.current.reset();
         if (isVerified) {
             addFormContact_(formData);
             toast.success("En Kısa Sürede Dönüş Yapacağız , Sağlıcakla Kalın...")
@@ -54,11 +55,13 @@ export default function WhyFihair() {
                             <div className='flex items-center justify-center gap-x-2 '>
                                 <input onChange={(e) => { setFormData({ ...formData, phoneNumber: e.target.value }) }} value={formData.phoneNumber} type="text" className='h-[44px] rounded-md px-2 outline-none focus:placeholder:text-xs focus:placeholder:-translate-y-2' placeholder='   Telefon numaranız' />
                             </div>
+                            <ReCAPTCHA
+                                sitekey="6LdzflYmAAAAANsANpl_tkcndr5ZoPX3uG2sgM49"
+                                onChange={handleRecaptchaChange}
+                                ref={captchaRef}
+                            />
                         </div>
-                        <ReCAPTCHA
-                            sitekey="6LepJFYmAAAAANuyHTyPC5Xnu5iHvREo2duYkzwU"
-                            onChange={handleRecaptchaChange}
-                        />
+
 
                         <div className=' active:scale-95 hover:scale-105 transition-all'><button type='submit' className='h-10 font-medium tracking-widest text-gray-100 w-auto bg-brand-color rounded-md px-8'>Gönder</button></div>
 
