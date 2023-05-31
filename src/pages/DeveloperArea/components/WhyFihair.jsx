@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import Icon from '../../../components/Icon'
 import { addFormContact } from '../../../firebase'
 import { AiOutlineCloseCircle } from 'react-icons/ai'
+import { toast } from 'react-toastify'
+import ReCAPTCHA from 'react-google-recaptcha'
 
 
 export default function WhyFihair() {
@@ -9,17 +11,35 @@ export default function WhyFihair() {
     const whyFihair = process.env.PUBLIC_URL + `/whyFihair.png`
 
     const [isActive, setisActive] = useState(false)
+    const [isVerified, setIsVerified] = useState(false);
+
     const [formData, setFormData] = useState({
         fullName: "",
         phoneNumber: ""
     })
+
+    const handleRecaptchaChange = (response) => {
+        if (response) {
+            setIsVerified(true);
+        } else {
+            setIsVerified(false);
+        }
+    };
+
     const addFormContact_ = (formData) => {
         addFormContact(formData)
     }
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        addFormContact_(formData);
+        if (isVerified) {
+            addFormContact_(formData);
+            toast.success("En Kısa Sürede Dönüş Yapacağız , Sağlıcakla Kalın...")
+        } else {
+            // reCAPTCHA doğrulaması başarısız
+            toast.warning("Gerçek bir kişimi yoksa robot mu olduğunuzu anlayamadık. Lütfen tekrar deneyiniz... ")
+        }
+
     }
 
 
@@ -35,6 +55,10 @@ export default function WhyFihair() {
                                 <input onChange={(e) => { setFormData({ ...formData, phoneNumber: e.target.value }) }} value={formData.phoneNumber} type="text" className='h-[44px] rounded-md px-2 outline-none focus:placeholder:text-xs focus:placeholder:-translate-y-2' placeholder='   Telefon numaranız' />
                             </div>
                         </div>
+                        <ReCAPTCHA
+                            sitekey="6LepJFYmAAAAAODEeFg4M5Qbk5DoPuYemapJHcvJ"
+                            onChange={handleRecaptchaChange}
+                        />
 
                         <div className=' active:scale-95 hover:scale-105 transition-all'><button type='submit' className='h-10 font-medium tracking-widest text-gray-100 w-auto bg-brand-color rounded-md px-8'>Gönder</button></div>
 
