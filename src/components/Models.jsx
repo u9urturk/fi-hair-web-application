@@ -5,83 +5,27 @@ import { Form, Formik } from 'formik'
 import { LoginSchema } from '../Validation/login-schema'
 import Input from './Input'
 import Button from './Button'
-import { ToastContainer, toast } from 'react-toastify';
-import { userHendle } from '../utils'
 import { useState } from 'react'
 import { GrUserAdmin } from 'react-icons/gr'
 import Icon from './Icon'
-import { logout } from '../store/auth'
-import store from '../store'
+import { login, logout } from '../firebase.js'
 
 
 export default function Models() {
-    const user = useSelector(state => state.auth.user)
-
     const [isActive, setisActive] = useState(false)
-    const logoutLy = () => store.dispatch(logout())
 
-    const checkAuth = (username, password) => {
-        const developerInfo = {
-            username: 'developer@mail.com',
-            password: '12345'
-        }
-
-        if (username === developerInfo.username && password === developerInfo.password) {
-            let data = {
-                role: 'developer',
-                username,
-                password
-
-            }
-            setTimeout(() => {
-                userHendle(data)
-                setisActive(false)
-
-            }, 2000);
-            notifySuccess();
-        } else {
-            userHendle(false);
-            notifyError();
-        }
-    }
-
-    const notifyError = () => toast.error('Hatalı Giriş!', {
-        position: "top-left",
-        autoClose: 3000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "colored",
-    });
-    const notifySuccess = () => toast.success('Giriş Başarılı', {
-        position: "top-left",
-        autoClose: 3000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "colored",
-    });
-
-
-
-
+    const user = useSelector(state => state.auth.user)
     const handleSubmit = async (values, actions) => {
-
         //console.log(values.username , values.password)
-        checkAuth(values.username, values.password);
-
+        login(values.username, values.password)
     }
 
 
-
+    
     return (
-        <>
+        <div>
             {!user && <div className='cursor-pointer text-gray-900 opacity-80 hover:scale-110 transition-all' onClick={() => { setisActive(true) }}><GrUserAdmin size={24}></GrUserAdmin></div>}
-            {user && <button onClick={logoutLy}><RiLogoutCircleRLine></RiLogoutCircleRLine></button>}
+            {user && <button onClick={()=>{logout()}}><RiLogoutCircleRLine></RiLogoutCircleRLine></button>}
             {
                 isActive === true && !user && <div className='fixed top-0 left-0 h-screen w-full  backdrop-blur-sm'>
                     <div className='h-full w-full flex items-center justify-center'>
@@ -100,7 +44,6 @@ export default function Models() {
                                 initialValues={{
                                     username: '',
                                     password: ''
-
                                 }}
 
                                 onSubmit={handleSubmit}
@@ -111,7 +54,6 @@ export default function Models() {
                                             <Input type="text" name="username" className='p-2  focus:outline-brand-color  w-48 text-base  transition-all h-10 outline-none hover:text-sm ' label='Kullanıcı adı' />
                                             <Input type="password" name="password" className='p-2  focus:outline-brand-color w-48  h-10 text-base transition-all outline-none hover:text-sm ' label='Şifre' />
                                             <Button type='submit' disabled={!isValid || !dirty || isSubmitting}>Giriş Yap</Button>
-
                                         </div>
                                     </Form>
                                 )}
@@ -121,18 +63,7 @@ export default function Models() {
                 </div>
             }
 
-            <ToastContainer
-                position="top-left"
-                autoClose={3000}
-                hideProgressBar={false}
-                newestOnTop={false}
-                closeOnClick
-                rtl={false}
-                pauseOnFocusLoss
-                draggable
-                pauseOnHover
-                theme="colored"></ToastContainer>
-        </>
+        </div>
     )
 
 }
