@@ -4,11 +4,12 @@ import { useRoutes } from 'react-router-dom';
 import './App.css';
 import Loading from './components/loading';
 import routes from './routes';
+import { ToastContainer } from 'react-toastify';
 
 function App() {
   const showRoutes = useRoutes(routes)
   const [isLoading, setisLoading] = useState(false)
-  const test= ()=>{
+  const test = () => {
 
     setTimeout(() => {
       setisLoading(true)
@@ -19,17 +20,29 @@ function App() {
     test()
 
   }, [])
-  
-  if(isLoading === true) {
-    return (
-    <div> 
-        
-        {showRoutes}
-       
-    </div>
-  )}else{
 
-    return(
+  if (isLoading === true) {
+    return (
+      <div>
+
+        {showRoutes}
+        <ToastContainer
+          position="top-left"
+          autoClose={3000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="colored"></ToastContainer>
+
+      </div>
+    )
+  } else {
+
+    return (
       <div>
         <Loading></Loading>
       </div>

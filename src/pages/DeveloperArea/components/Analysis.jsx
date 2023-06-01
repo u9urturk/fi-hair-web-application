@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react'
 import ReactFlagsSelect from 'react-flags-select'
-import { ToastContainer, toast } from 'react-toastify'
+import {toast } from 'react-toastify'
 import MultipleFileUpload from '../../../components/MultipleFileUpload'
 import {AiOutlineCloseCircle} from 'react-icons/ai'
 
@@ -289,17 +289,7 @@ export default function Analysis() {
             </div>
             {isOpen && modalActive()}
 
-            <ToastContainer
-                                            position="top-left"
-                                            autoClose={3000}
-                                            hideProgressBar={false}
-                                            newestOnTop={false}
-                                            closeOnClick
-                                            rtl={false}
-                                            pauseOnFocusLoss
-                                            draggable
-                                            pauseOnHover
-                                            theme="colored"></ToastContainer>
+          
 
         </div>
     )

@@ -57,18 +57,18 @@ export const getStoregeRef = () => {
 
 
 
-export const addFormContact = async (data) => {
-  console.log(data)
+export const addFormContact = async (fullName,phoneNumber) => {
+ 
   const newContactRef = doc(collection(db, "contact"));
 
   await setDoc(newContactRef, {
-    fullName: data.fullName,
-    phoneNumber: data.phoneNumber,
+    fullName: fullName,
+    phoneNumber: phoneNumber,
     createdTime: new Date(),
     readed: false
   })
 
-  console.log(data)
+  
 
 
 }
