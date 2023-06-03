@@ -1,93 +1,14 @@
 import React from 'react'
-import { addFormContact } from '../../../firebase'
-import { useState } from 'react'
 import Icon from '../../../components/Icon'
-import { useRef } from 'react'
-import { toast } from 'react-toastify'
-import ReCAPTCHA from 'react-google-recaptcha'
-
+import ContactComponent from '../components/ContactComponent'
 export default function ContactPage() {
 
-  const turkey = process.env.PUBLIC_URL + `/flags/turkey.png`
 
-  const [isVerified, setIsVerified] = useState(false);
-  const captchaRef = useRef(null)
-
-  const [phoneNumber, setPhoneNumber] = useState('');
-  const [fullName, setFullName] = useState('');
-
-
-
-  const handleFullNameChange = (e) => {
-    const inputValue = e.target.value;
-    setFullName(inputValue);
-  }
-
-  const handleInputChange = (e) => {
-    const inputValue = e.target.value;
-
-    // Girilen değeri sadece sayılara dönüştür
-    const numericValue = inputValue.replace(/\D/g, '');
-
-    // 10 karakterlik bir telefon numarası oluştur
-    const formattedValue = `${numericValue.slice(0, 3)} - ${numericValue.slice(3, 6)} - ${numericValue.slice(6, 10)}`;
-    // console.log(formattedValue.length)
-    if (formattedValue.length > 6) {
-      setPhoneNumber(formattedValue);
-    } else if (formattedValue.length === 6) {
-      setPhoneNumber('')
-    }
-  };
-
-  const handleRecaptchaChange = (response) => {
-    if (response) {
-      setIsVerified(true);
-    } else {
-      setIsVerified(false);
-    }
-  };
-
-  const addFormContact_ = (fullName, phoneNumber) => {
-    addFormContact(fullName, phoneNumber)
-  }
-
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    captchaRef.current.reset();
-    if (isVerified) {
-      addFormContact_(fullName, phoneNumber);
-      toast.success("En Kısa Sürede Dönüş Yapacağız , Sağlıcakla Kalın...")
-    } else {
-      // reCAPTCHA doğrulaması başarısız
-      toast.warning("Gerçek bir kişimi yoksa robot mu olduğunuzu anlayamadık. Lütfen tekrar deneyiniz... ")
-    }
-
-  }
   return (
     <div className='w-full h-auto'>
       <div className='relative flex items-center justify-center py-20 bg-gradient-to-tr from-brand-color to-gray-100'>
-        <form onSubmit={handleSubmit} id='name' className=' relative md:z-0 z-[1] flex flex-col items-center justify-center gap-y-8 shadow-xl shadow-brand-color drop-shadow-2xl bg-brand-color bg-opacity-30 p-8 rounded-xl '>
-          <strong className='text-white'>Formu Doldurun Sizi Arayalım</strong>
-          <div className='flex  flex-col items-center  justify-center w-full h-auto   gap-y-4'>
-            <input onChange={handleFullNameChange} value={fullName}
-              className='w-full rounded-md h-[44px] px-2 outline-none  border-[2px] border-solid transition-colors focus:border-brand-color 
-                            focus:placeholder:text-xs focus:placeholder:-translate-y-2' type="text" placeholder='   Adınız Soyadınız' />
-            <div className='flex items-center justify-center gap-x-2 '>
-              <div className='h-[44px] flex items-center justify-center  w-16 cursor-pointer bg-gray-100 rounded-md p-3 '>
-                <img src={turkey} title='Turkey icons created by Freepik - Flaticon' alt="" /></div>
-              <input onChange={handleInputChange} maxLength={16} type="text" value={phoneNumber}
-                className='h-[44px] rounded-md px-2 outline-none border-[2px] border-solid transition-colors
-                                 focus:border-brand-color focus:placeholder:text-xs focus:placeholder:-translate-y-2' placeholder='   Telefon numaranız' />
-            </div>
-            <ReCAPTCHA
-              sitekey="6LdzflYmAAAAANsANpl_tkcndr5ZoPX3uG2sgM49"
-              onChange={handleRecaptchaChange}
-              ref={captchaRef}
-            />
-          </div>
+        <ContactComponent ></ContactComponent>
 
-          <div className=' active:scale-95 hover:scale-105 transition-all'><button type='submit' className='h-10 font-medium tracking-widest text-gray-100 w-auto bg-brand-color rounded-md px-8'>Gönder</button></div>
-        </form>
         <div className='absolute md:bottom-5 md:right-5 flex items-center justify-center gap-x-3'>
           <Icon name={'fihair-logo-new'} title={'logo'} width={150}></Icon>
           <div className='space-x-1'>
