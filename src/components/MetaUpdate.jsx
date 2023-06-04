@@ -53,6 +53,11 @@ export default function MetaUpdate() {
         title:"PRP Tedavisi | FiHair Zonguldak Saç Ekimi Kliniği"
       },
       {
+        path:"/hizmetler/sac-simulasyonu",
+        content:"Saç simülasyonu, saç dökülmesi veya seyrek saçlı bölgeleri kamufle etmek için kullanılan yenilikçi bir kozmetik uygulamadır.Saç simülasyonu hakkında daha fazla bilgi edinin.",
+        title:"Saç Simülasyonu | FiHair"
+      },
+      {
         path:"/contact",
         content:"Bize ulaşın ve randevu almak için iletişim bilgilerimizi kullanın. Saç ekimi hakkında sorularınızı yanıtlayalım.",
         title:"İletişim | FiHair Zonguldak Saç Ekimi Kliniği"

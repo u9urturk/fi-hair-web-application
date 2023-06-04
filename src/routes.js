@@ -9,6 +9,7 @@ import Prp from "./pages/DeveloperArea/pages/Prp";
 import MainLayout from "./pages/MainLayout";
 import ContactPage from "./pages/DeveloperArea/pages/ContactPage";
 import PrivacyPolicy from "./components/PrivacyPolicy";
+import HairSimulation from "./pages/DeveloperArea/pages/HairSimulation";
 
 const routes =  [
     {
@@ -50,6 +51,10 @@ const routes =  [
             {
                 path:"hizmetler/prp",
                 element:<Prp></Prp>
+            },
+            {
+                path:"hizmetler/sac-simulasyonu",
+                element:<HairSimulation></HairSimulation>
             },
             {
                 path:"contact",

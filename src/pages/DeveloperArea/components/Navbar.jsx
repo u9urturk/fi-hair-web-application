@@ -20,7 +20,8 @@ export default function Navbar() {
                     {name:"Saç Transplantasyonu",link:"/hizmetler/sac-ekimi"},
                     {name:"Saç Analizi",link:"/hizmetler/sac-analizi"},
                     {name:"Mezoterapi Uygulaması",link:"/hizmetler/mezoterapi"},
-                    {name:"PRP Uygulaması",link:"/hizmetler/prp"}
+                    {name:"PRP Uygulaması",link:"/hizmetler/prp"},
+                    {name:"Saç Simülasyonu",link:"hizmetler/sac-simulasyonu"}
                 ]} ></Dropdown>
                 <Dropdown name={"İletişim"} link={"/contact"} ></Dropdown>
             </div>
