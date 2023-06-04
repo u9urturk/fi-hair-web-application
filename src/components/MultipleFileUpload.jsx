@@ -3,6 +3,7 @@ import { useState, ChangeEvent } from 'react'
 import { addFormAnalysis, getStoregeRef } from '../firebase';
 import ProgressBarCustom from './ProgressBarCustom';
 import { uploadBytesResumable ,ref as storageRef, getDownloadURL } from 'firebase/storage';
+import { toast } from 'react-toastify';
 
 export default function MultipleFileUpload({formData,onClose}) {
 
@@ -11,12 +12,15 @@ export default function MultipleFileUpload({formData,onClose}) {
   const [fileList, setFileList] = useState();
   const [progress, setProgress] = useState(0);
 
-  useEffect(() => {
-  }, [])
-
-
   function handleUpload() {
-    if (fileList == null) return;
+    //console.log(formData)
+    if (fileList == null && formData === null) return;
+    else if(fileList==null && formData){
+      addFormAnalysis(formData);
+      toast.success("Bilgiler başarılı ile gönderildi. En kısa sürede dönüş yapacağız sağlıcakla kalın.")
+      onClose()
+      return;
+    }
     const iFile = fileList[0]
     addFormAnalysis(formData).then(res => {
       //console.log(file.name)
@@ -36,7 +40,10 @@ export default function MultipleFileUpload({formData,onClose}) {
           const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
           setProgress(progress)
           if(progress == 100){
-            onClose()
+            setTimeout(() => {
+              onClose()
+            }, 1300);
+            toast.success("Bilgiler başarılı ile gönderildi. En kısa sürede dönüş yapacağız sağlıcakla kalın.")
           }
           // switch (snapshot.state) {
           //     case 'paused':

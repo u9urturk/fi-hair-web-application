@@ -7,7 +7,7 @@ export default function Inbox({ isOpen, onClose }) {
 
     if (isOpen === true) {
         return (
-            <div className='fixed left-0 top-0 w-full h-screen backdrop-blur-lg  flex items-center justify-center'>
+            <div className='fixed z-40 left-0 top-0 w-full h-screen backdrop-blur-lg  flex items-center justify-center'>
 
                 <div className='relative flex flex-col items-center gap-y-4 justify-center max-w-5xl w-full max-h-[calc(100%-5rem)] h-full bg-gray-400 rounded-xl shadow-2xl bg-opacity-90'>
                     <div onClick={onClose} className="absolute top-2 right-3 cursor-pointer" >

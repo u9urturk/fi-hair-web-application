@@ -76,7 +76,7 @@ export const addFormContact = async (fullName,phoneNumber) => {
 
 export const addFormAnalysis = async (formData) => {
 
-  console.log(formData)
+  //console.log(formData)
 
   const newContactRef = collection(db, "analysis");
 

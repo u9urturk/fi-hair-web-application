@@ -5,6 +5,7 @@ import './App.css';
 import Loading from './components/loading';
 import routes from './routes';
 import { ToastContainer } from 'react-toastify';
+import MetaUpdate from './components/MetaUpdate';
 
 function App() {
   const showRoutes = useRoutes(routes)
@@ -24,7 +25,7 @@ function App() {
   if (isLoading === true) {
     return (
       <div>
-
+        <MetaUpdate></MetaUpdate>
         {showRoutes}
         <ToastContainer
           position="top-left"

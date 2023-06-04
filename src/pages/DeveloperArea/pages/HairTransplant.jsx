@@ -1,4 +1,5 @@
 import React from 'react'
+import Analysis from '../components/Analysis'
 
 export default function HairTransplant() {
     const image = [
@@ -11,7 +12,7 @@ export default function HairTransplant() {
     ]
 
     return (
-        <div className='w-full h-auto mb-28 flex items-center justify-center' >
+        <div className='w-full  h-auto mb-28 flex flex-col items-center justify-center' >
             <div className='container flex flex-col items-start gap-y-20 py-20 px-20 justify-center'>
                 <div className='px-12 py-8 bg-gradient-to-l from-gray-100 to-brand-color rounded-sm rounded-tl-3xl rounded-br-3xl'>
                     <strong className='font-serif tracking-widest  text-gray-500'>Saç Ekimi Hakkında Bilgilendirme</strong>
@@ -113,6 +114,7 @@ export default function HairTransplant() {
                     <img className='w-[520px] mt-4 md:mt-0 rounded-3xl h-auto' src={image[1].url} alt="hakkinda" />
                 </div>
             </div>
+            <Analysis></Analysis>
         </div>
     )
 }
