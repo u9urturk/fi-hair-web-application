@@ -210,10 +210,8 @@ export default function Analysis() {
                                         <MultipleFileUpload formData={formData} onClose={()=>{close()}} ></MultipleFileUpload>
                                     </div>
                                 </div>
-                                {/* <div  className='translate-x-40 translate-y-4 active:scale-95 hover:scale-105 transition-all'><button onClick={()=>{handleSubmit()}} className='h-10 font-medium tracking-widest text-gray-900 w-auto bg-brand-color rounded-md px-8'>Gönder</button></div> */}
-                               
-                                    
-                            </div>
+                                
+                           </div>
 
                         </div>
                     </div>
