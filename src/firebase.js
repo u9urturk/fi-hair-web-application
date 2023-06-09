@@ -27,8 +27,8 @@ onAuthStateChanged(auth, user => {
 
 
 
-export const login = (email,password) => {
-  signInWithEmailAndPassword(auth, email, password)
+export const login = async (email,password) => {
+  await signInWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
       toast.success("Giriş Başarılı")
     })

@@ -25,8 +25,8 @@ export default function Directions() {
                     <a href="https://www.instagram.com/fihairclinic/" target={'_blank'}><BsInstagram className='text-gray-800  hover:scale-105'></BsInstagram></a>
                     <a href=""><FiTwitter className='hover:scale-105 text-gray-800 '></FiTwitter></a>
                     <a href=""><AiOutlineFacebook className='hover:scale-105 text-gray-800 '></AiOutlineFacebook></a>
-                    <Models></Models>
                     {user && <button onClick={() => { setIsOpen(true) }}><MdForwardToInbox></MdForwardToInbox></button>}
+                    <Models></Models>
                     
                 </div>
             </div>

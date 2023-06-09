@@ -16,14 +16,14 @@ export default function Inbox({ isOpen, onClose }) {
                     <strong className='basis-[10%] flex text-gray-100 items-center'>Gelen Kutusu</strong>
                     <div className='flex items-start justify-around basis-[90%] w-full h-full'>
                         <div className='w-full gap-y-2 h-full basis-[50%] border-r border-gray-100 border-opacity-40 flex flex-col items-center justify-center'>
-                            <header className='text-gray-100 basis-[5%]'>İletişim</header>
+                            <p className='text-gray-100 basis-[5%]'>İletişim</p>
                             <div className=' justify-center overflow-auto  w-[calc(100%-2rem)]  basis-[95%]'>
                                 <ListenContact></ListenContact>
                             </div>
 
                         </div>
                         <div className='w-full gap-y-2 h-full basis-[50%] border-r border-gray-100 border-opacity-40 flex flex-col items-center justify-center'>
-                            <header className='text-gray-100'>Analiz</header>
+                            <p className='text-gray-100  basis-[5%]'>Analiz</p>
                             <div  className=' justify-center overflow-auto  w-[calc(100%-2rem)]  basis-[95%]'>
                                 <ListenAnalysis></ListenAnalysis>
                             </div>

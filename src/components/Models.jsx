@@ -16,15 +16,14 @@ export default function Models() {
 
     const user = useSelector(state => state.auth.user)
     const handleSubmit = async (values, actions) => {
-        //console.log(values.username , values.password)
-        login(values.username, values.password)
+         login(values.username, values.password)
     }
 
 
     
     return (
         <div>
-            {!user && <div className='cursor-pointer text-gray-900 opacity-80 hover:scale-110 transition-all' onClick={() => { setisActive(true) }}><GrUserAdmin size={24}></GrUserAdmin></div>}
+            {!user && <div className='cursor-pointer translate-x-1 text-gray-900 opacity-80 hover:scale-110 transition-all' onClick={() => { setisActive(true) }}><GrUserAdmin size={24}></GrUserAdmin></div>}
             {user && <button onClick={()=>{logout()}}><RiLogoutCircleRLine></RiLogoutCircleRLine></button>}
             {
                 isActive === true && !user && <div className='fixed top-0 left-0 h-screen w-full  backdrop-blur-sm'>

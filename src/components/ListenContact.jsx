@@ -10,38 +10,41 @@ export default function ListenContact() {
 
     const db = getFirestore(getFireBase());
 
-    const[data , setData] = useState([]);
+    const [data, setData] = useState([]);
     useEffect(() => {
-      if(db){
-        const ref = collection(db,"contact")
-        const q = query(ref,orderBy("createdTime","desc"));
-        const unsub =onSnapshot(q,(querySnapshot) => {
-            //console.log(querySnapshot.docs)
-            const data = querySnapshot.docs.map(doc => ({
-                ... doc.data(),
-                id:doc.id,
-            }))
+        if (db) {
+            const ref = collection(db, "contact")
+            const q = query(ref, orderBy("createdTime", "desc"));
+            const unsub = onSnapshot(q, (querySnapshot) => {
+                //console.log(querySnapshot.docs)
+                const data = querySnapshot.docs.map(doc => ({
+                    ...doc.data(),
+                    id: doc.id,
+                }))
 
-            setData(data);
-        })
+                setData(data);
+            })
 
-        //console.log(data)
-        return unsub;
+            //console.log(data)
+            return unsub;
 
-      }
+        }
 
-    
-      
+
+
     }, [db])
-    
+
     return (
         <ul className='w-full h-[460px]'>
 
             {
-               data&& data.map((res,key) => {
-                    return <li key={key} className='border-2 opacity-70 hover:opacity-100 hover:scale-95 cursor-pointer border-gray-100 transition-all mt-2  border-opacity-40 rounded-xl p-4'>
+                data && data.map((res, key) => {
+                    return <li key={key} className='border-2 flex flex-col text-center items-center justify-center md:opacity-70 hover:opacity-100 hover:scale-95 cursor-pointer border-gray-100 transition-all mt-2  border-opacity-40 rounded-xl p-4'>
                         <strong>{res.fullName}</strong>
-                        <p>Telefon Numarası : {res.phoneNumber}</p>
+                        <div className='pt-4 flex flex-col gap-y-1'>
+                            <p>Telefon Numarası</p>
+                            <p>{res.phoneNumber}</p>
+                        </div>
                     </li>
                 })
             }

@@ -91,11 +91,11 @@ export default function ListenAnalysis() {
         if (isOpenDetail == true) {
 
             return (
-                <div className='fixed  left-0 top-0 w-full h-screen bg-gray-400 backdrop-blur-sm flex items-center justify-center'>
-                    <div className='relative flex border-2 border-white rounded-2xl items-center justify-center w-[calc(100%-20%)] h-[calc(100%-20%)] p-2'>
-                        <div className='absolute right-0 top-0 cursor-pointer p-4 text-gray-200 hover:text-gray-50 hover:scale-105' onClick={() => { setIsOpenDetail(false) }}><AiOutlineCloseCircle size={28}></AiOutlineCloseCircle></div>
+                <div className='fixed  left-0 top-0 w-full h-screen  bg-gray-400 backdrop-blur-sm flex items-center justify-center'>
+                    <div className='relative flex flex-col overflow-auto  md:flex-row border-2 border-white rounded-2xl items-center  justify-start w-[calc(100%-20%)] max-h-[720px] p-2'>
+                        <div className='absolute right-0 top-0 cursor-pointer p-4 text-gray-200  hover:text-gray-50 ' onClick={() => { setIsOpenDetail(false) }}><AiOutlineCloseCircle size={28}></AiOutlineCloseCircle></div>
                         <div className='basis-[50%] flex flex-col gap-y-4 items-center justify-center'>
-                            <div>  <img className='h-[150px] w-auto' src={getCustomData()}></img></div>
+                            <img className='h-[150px] w-auto' src={getCustomData()}></img>
                             <ul className='flex flex-col gap-y-2 bg-gray-400 py-5 px-10 rounded-2xl items-start justify-center'> 
                                 <li className='bg-gray-200 py-1 px-2 w-full rounded-tr-xl rounded-bl-xl hover:scale-95 transition-transform '>Cinsiyet : {currentCustomer.gender == 0 ? "Erkek" : "Kadın"}</li>
                                 <li className='bg-gray-200 py-1 px-2 w-full rounded-tr-xl rounded-bl-xl hover:scale-95 transition-transform '>İsim Soyisim : {currentCustomer.fullName}</li>
@@ -127,7 +127,7 @@ export default function ListenAnalysis() {
                 {
 
                     data && data.map((res, key) => {
-                        return <li key={key} onClick={() => { setIsOpenDetail(true); setCurrentCustomer(res) }} className='border-2 opacity-70 hover:opacity-100 hover:scale-95 cursor-pointer border-gray-100 transition-all mt-2  border-opacity-40 rounded-xl p-4'>
+                        return <li key={key} onClick={() => { setIsOpenDetail(true); setCurrentCustomer(res) }} className='border-2 flex  flex-col items-center justify-center gap-y-4 md:opacity-70 hover:opacity-100 hover:scale-95 cursor-pointer border-gray-100 transition-all mt-2  border-opacity-40 rounded-xl p-4'>
                             <strong>{res.fullName}</strong>
                             <p>Telefon Numarası : {res.phoneNumber}</p>
                         </li>

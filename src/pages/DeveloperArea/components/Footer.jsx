@@ -38,6 +38,8 @@ export default function Footer() {
                         <Link onClick={()=>{scrollUp()}} to={"/hizmetler/sac-analizi"} className='border-t-[2px] border-r-[2px]  transition-transform  hover:scale-105 p-2 cursor-pointer border-brand-color flex items-center justify-center rounded-lg '>Saç Analizi</Link>
                         <Link onClick={()=>{scrollUp()}} to={"/hizmetler/mezoterapi"} className='border-t-[2px] border-r-[2px]  transition-transform  hover:scale-105 p-2 cursor-pointer border-brand-color flex items-center justify-center rounded-lg '>Mezoterapi</Link>
                         <Link onClick={()=>{scrollUp()}} to={"/hizmetler/prp"} className='border-t-[2px] border-r-[2px] transition-transform  hover:scale-105  p-2 cursor-pointer border-brand-color flex items-center justify-center rounded-lg '>PRP(Plateletten Zengin Plazma)</Link>
+                        <Link onClick={()=>{scrollUp()}} to={"hizmetler/sac-simulasyonu"} className='border-t-[2px] border-r-[2px] transition-transform  hover:scale-105  p-2 cursor-pointer border-brand-color flex items-center justify-center rounded-lg '>Saç Simülasyonu</Link>
+
 
                     </ul>
                 </div>

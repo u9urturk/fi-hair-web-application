@@ -54,7 +54,7 @@ export default function ListenImages({ customerId }) {
                         <div className='absolute right-10 cursor-pointer opacity-50 hover:opacity-100 hover:scale-95 top-10 text-white' 
                         onClick={() => { setIsImageModal(false) }}><AiOutlineCloseCircle size={30}></AiOutlineCloseCircle></div>
                         <div className=''>
-                            <img  className='max-w-[100%] h-auto w-[760px] ' src={currentImage} alt="" />
+                            <img  className='w-[720px] h-[420px]' src={currentImage} alt="" />
                         </div>
                     </div>
                 </div>
@@ -65,7 +65,7 @@ export default function ListenImages({ customerId }) {
 
     return (
         <>
-            <div className='grid grid-cols-2 gap-4 '>
+            <div className='grid grid-cols-1 md:grid-cols-2 gap-4 '>
                 {
                     images && images.map((image, key) => {
                         return (
